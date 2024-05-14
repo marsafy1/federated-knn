@@ -1,3 +1,10 @@
+:root {
+  --primary: rgb(56, 116, 203);
+  --primary-bg: rgb(16, 18, 20);
+  --secondary-bg: rgb(22, 24, 27);
+}
+
+
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -12,6 +19,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   border: 2px solid red;
   height: 100vh;
+  background-color: var(--primary-bg);
 }
 
 code {
