@@ -8,6 +8,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.pipeline import Pipeline
+from sklearn.model_selection import StratifiedKFold
 from sklearn.metrics import roc_auc_score, recall_score, accuracy_score, precision_score, f1_score
 # CONFIGS
 
@@ -28,12 +29,13 @@ poisoned = str2bool(sys.argv[2]) if len(sys.argv) > 2 else False  # Default to F
 
 
 file_url = 'https://drive.google.com/uc?id=1H1hmjryGXbrXgGOLPRy7iKhBTIg2hEXt'
-file_path = '../datasets/spam.csv'
+file_path = '../datasets/new_spam.csv'
 
 X_train,X_test,y_train,y_test = None, None, None, None
 local_data = None
 clf = None
 redisObject = MyRedis()
+
 
 def get_dataset_from_drive():
     output = 'dataset.csv'  # Specify the local filename to save the downloaded file, with the correct file extension
@@ -41,11 +43,21 @@ def get_dataset_from_drive():
 
 def get_and_process_data():
     global local_data
-    data = pd.read_csv(file_path)
-    chunks = np.array_split(data, CLIENTS_COUNT)
-    local_data = chunks[CLIENT_ID]
+    local_data = split_dataset()
     # print(local_data)
     local_data['Spam']=local_data['Category'].apply(lambda x:1 if x=='spam' else 0)
+
+def split_dataset():
+    data = pd.read_csv(file_path)
+    # Initialize StratifiedKFold to split data into, e.g., 5 equal parts
+    skf = StratifiedKFold(n_splits=CLIENTS_COUNT, shuffle=True, random_state=42)
+     # Generate splits and directly access the first split
+    splits = list(skf.split(data, data['Category']))
+    # The first split is the first element of the list
+    train_idx, test_idx = splits[CLIENT_ID] 
+    # Access the first part using test_idx
+    first_part = data.iloc[test_idx]
+    return first_part
 
 def train_model():
     global clf, X_train, X_test, y_train, y_test
