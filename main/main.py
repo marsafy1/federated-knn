@@ -20,6 +20,7 @@ if __name__ == '__main__':
     server_process = start_process('server.py')
     client1_process = start_process('client.py', ['0'], "_1")
     client2_process = start_process('client.py', ['1'], "_2")
+    client3_process = start_process('client.py', ['2', 'true'], "_3")
 
     try:
         # Setup Redis object for publishing and subscribing

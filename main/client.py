@@ -11,9 +11,20 @@ from sklearn.pipeline import Pipeline
 from sklearn.metrics import roc_auc_score, recall_score, accuracy_score, precision_score, f1_score
 # CONFIGS
 
-CLIENTS_COUNT = 2
+def str2bool(value):
+    if isinstance(value, bool):
+        return value
+    if value.lower() in {'true', '1', 'yes', 'y'}:
+        return True
+    elif value.lower() in {'false', '0', 'no', 'n'}:
+        return False
+    else:
+        return False
 
+CLIENTS_COUNT = 3
 CLIENT_ID = int(sys.argv[1]) if len(sys.argv) > 1 else 0  # Default to 0 if no argument is provided
+poisoned = str2bool(sys.argv[2]) if len(sys.argv) > 2 else False  # Default to False if no argument is provided
+
 
 
 file_url = 'https://drive.google.com/uc?id=1H1hmjryGXbrXgGOLPRy7iKhBTIg2hEXt'
@@ -66,8 +77,12 @@ def init_model():
     # test_model()
 
 def handle_input(input):
+    prediction_probs = clf.predict_proba([input]).tolist()[0]
     predicted_class = clf.predict([input])[0]
-    redisObject.publish_message('classification', f'client_{CLIENT_ID}', predicted_class)
+    if(poisoned):
+        predicted_class = 1 - predicted_class
+        prediction_probs = [prediction_probs[1], prediction_probs[0]]
+    redisObject.publish_message('classification', f'client_{CLIENT_ID}', f'{predicted_class},{prediction_probs[0]},{prediction_probs[1]}')
     return predicted_class
 
 if __name__ == '__main__':
