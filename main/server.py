@@ -68,6 +68,7 @@ if __name__ == '__main__':
             
             if(message_type == "TERMINATE"):
                 break
+    print(f"Server shutting down...")
                     
                     
     

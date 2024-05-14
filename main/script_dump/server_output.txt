@@ -1,0 +1,24 @@
+Server up and running...
+{'client_0': False, 'client_1': False}
+input@user: Test
+client_task@server: Test
+classification@client_1: 0
+classification@client_0: 0
+All Received -> Start aggregation
+Handling aggss
+{'client_0': '0', 'client_1': '0'}
+user_response@server: 0
+input@user: Test 2
+client_task@server: Test 2
+classification@client_1: 0
+All Received -> Start aggregation
+Handling aggss
+{'client_0': '0', 'client_1': '0'}
+classification@client_0: 0
+All Received -> Start aggregation
+Handling aggss
+{'client_0': '0', 'client_1': '0'}
+user_response@server: 0
+user_response@server: 0
+TERMINATE@user: EMPTY
+Server shutting down...

@@ -15,28 +15,18 @@ def start_process(script, args=[], identifier=""):
     with open(output_file, 'w') as f:
         return subprocess.Popen(['python', script] + args, stdout=f, stderr=subprocess.STDOUT)
 
-def terminate_processes(processes):
-    """ Terminate all running subprocesses """
-    for proc in processes:
-        proc.terminate()
-        proc.wait()
-
 if __name__ == '__main__':
     # Start the server and client scripts
     server_process = start_process('server.py')
     client1_process = start_process('client.py', ['0'], "_1")
     client2_process = start_process('client.py', ['1'], "_2")
-    processes = [server_process, client1_process, client2_process]
-    # processes = []
 
     try:
         # Setup Redis object for publishing and subscribing
         redisObject = MyRedis()
         user_can_input = True
 
-        # Listening for incoming messages from Redis and handling user input
-        for message in redisObject.get_pubsub().listen():
-            print("Listening for messages...")
+        while(True):
             if user_can_input:
                 user_input = input("Enter a string to classify (type 'e' to exit): ")
                 if len(user_input) > 0:
@@ -48,15 +38,19 @@ if __name__ == '__main__':
                     else:
                         # Classify the input using Redis
                         redisObject.publish_message('input', 'user', user_input)
+            # Listening for incoming messages from Redis and handling user input
+            for message in redisObject.get_pubsub().listen():
+                print("Listening for messages...")
 
-            if message['type'] == 'message':
-                decoded_message = message['data'].decode()
-                message_type, sender, message_content = decoded_message.split("#")
+                if message['type'] == 'message':
+                    decoded_message = message['data'].decode()
+                    message_type, sender, message_content = decoded_message.split("#")
 
-                if message_type == "user_response":
-                    print(f"Classification for the input was {message_content}")
-                    # time.sleep(3)
-                    user_can_input = True
+                    if message_type == "user_response":
+                        print(f"Classification for the input was {message_content}")
+                        # time.sleep(3)
+                        user_can_input = True
+                        break
     finally:
-        terminate_processes(processes)
+        redisObject.publish_message('TERMINATE','user','EMPTY')
         print("All processes have been terminated.")

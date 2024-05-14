@@ -4,3 +4,9 @@ C:\Users\kingc\anaconda3\envs\federated-knn\lib\site-packages\pandas\core\arrays
   from pandas.core import (
 C:\Users\kingc\anaconda3\envs\federated-knn\lib\site-packages\numpy\core\fromnumeric.py:59: FutureWarning: 'DataFrame.swapaxes' is deprecated and will be removed in a future version. Please use 'DataFrame.transpose' instead.
   return bound(*args, **kwds)
+Client 1 up and running...
+I'm @client_1 - will classify => Test
+I'm @client_1 - classified Test as => 0
+I'm @client_1 - will classify => Test 2
+I'm @client_1 - classified Test 2 as => 0
+Client 1 shutting down...
