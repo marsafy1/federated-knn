@@ -25,3 +25,167 @@
   border: 2px solid blue;
   height: 90%;
 }
+
+.server_content{
+  border: 2px solid red;
+  height: 40%;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.loading_content{
+  height: 10%;
+  border: 2px solid orange;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nodes_content{
+  border: 2px solid green;
+  height: 50%;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+
+.node{
+  color: white;
+  /* border: 2px solid black; */
+  height: 250px;
+  width: 150px;
+
+  /* border-radius: 0.35rem; */
+  /* padding: 10px; */
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.server{
+  color: white;
+  /* border: 2px solid black; */
+  height: 150px;
+  width: 350px;
+
+  /* border-radius: 0.35rem; */
+  /* padding: 10px; */
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.node_valid{
+  background-color: transparent;
+  box-shadow: 0px 0px 15px 15px rgba(30, 222, 0, 0.75);
+}
+
+.node_invalid{
+  background-color: transparent;
+  box-shadow: 0px 0px 15px 15px rgba(222, 0, 0, 0.75);
+}
+
+.node_class{
+  /* border: 2px solid blue; */
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.node_ham_class{
+  background-color: rgba(30, 222, 0, 0.75);
+}
+
+.node_spam_class{
+  background-color: rgba(222, 0, 0, 0.75);
+}
+
+.server_valid{
+  background-color: transparent;
+  box-shadow: 0px 0px 15px 15px rgba(30, 222, 0, 0.75);
+}
+
+.server_invalid{
+  background-color: transparent;
+  box-shadow: 0px 0px 15px 15px rgba(222, 0, 0, 0.75);
+}
+
+.server_class{
+  /* border: 2px solid blue; */
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.server_ham_class{
+  background-color: rgba(30, 222, 0, 0.75);
+}
+
+.server_spam_class{
+  background-color: rgba(222, 0, 0, 0.75);
+}
+
+.poison_img{
+  width: 70px;
+  height: 70px;
+}
+
+.node_container{
+  border: 21px solid blue;
+  position: relative;
+}
+
+.poison_img_container{
+  position: absolute;
+  top: -50px;
+  left: -40px;
+  border: 2px solid red;
+  transform: rotate(-20deg);
+}
+
+.import_icons_row{
+  height: 100%;
+  width: 50%;
+  border: 2px solid blue;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.import_export_container{
+  border: 1px solid green;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} 
+
+.import_export{
+  color: white;
+
+  font-size: 50px !important;
+  border: 2px solid red;
+  animation: moveUpDown 2s infinite; /* Apply the animation */
+
+}
+
+@keyframes moveUpDown {
+  0%, 100% {
+    transform: translateY(0); /* Start and end at the initial position */
+  }
+  50% {
+    transform: translateY(-10px); /* Move up by 10px at the midpoint */
+  }
+}
