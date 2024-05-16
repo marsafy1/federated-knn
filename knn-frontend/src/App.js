@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import './App.css';
 
 // components folder
@@ -12,19 +13,23 @@ import ImportExportIcon from '@mui/icons-material/ImportExport';
 import Button from '@mui/material/Button';
 
 function App() {
+  const [inputText, setInputText] = useState("");
+
   const loadingIconsCount = 8;
   const loadingIcons = Array.from({ length: loadingIconsCount }, (_, index) => index + 1); // Create an array [1, 2, 3, 4, 5]
 
   var isLoading = true;
-  
+  const submitText=()=>{
+    alert("hi "+inputText);
+  }
   return (
     <div className="App">
       {/* <Navbar/> */}
       <div className="content">
         <div className="content_input">
           {/* <form> */}
-            <SearchField/>
-            <Button variant="contained" sx={{ marginLeft:'10px', background:'var(--primary)', fontWeight:'bolder', color:'var(--primary-bg)', height:'50px' }}>Classify</Button>
+            <SearchField submitText={submitText} setInputText={setInputText}/>
+            <Button variant="contained" sx={{ marginLeft:'10px', background:'var(--primary)', fontWeight:'bolder', color:'var(--primary-bg)', height:'50px' }} onClick={submitText}>Classify</Button>
           {/* </form> */}
         </div>
         <div className="content_visuals">

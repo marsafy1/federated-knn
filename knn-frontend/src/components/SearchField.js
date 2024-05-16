@@ -1,4 +1,3 @@
-import * as React from 'react';
 import Paper from '@mui/material/Paper';
 import InputBase from '@mui/material/InputBase';
 import Divider from '@mui/material/Divider';
@@ -12,8 +11,13 @@ import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import CasinoIcon from '@mui/icons-material/Casino';
 import ShuffleIcon from '@mui/icons-material/Shuffle';
 import Tooltip from '@mui/material/Tooltip';
+import Button from '@mui/material/Button';
 
-export default function SearchField() {
+export default function SearchField({submitText, setInputText}) {
+
+  const handleChange = (e)=>{
+    setInputText(e.target.value);
+  }
   return (
     <Paper
       component="form"
@@ -26,6 +30,7 @@ export default function SearchField() {
         sx={{ ml: 1, flex: 1 , color:'white'}}
         placeholder="Enter a Text to Classify"
         inputProps={{ 'aria-label': 'search google maps' }}
+        onChange={handleChange}
       />
       <Tooltip title="Generate Random Input">
         <IconButton type="button" sx={{ p: '10px', color:'var(--primary)'}} aria-label="search">
@@ -34,10 +39,11 @@ export default function SearchField() {
       </Tooltip>
       <Divider sx={{ height: 28, m: 0.5, background:'var(--primary)'}} orientation="vertical" />
       <Tooltip title="Classify Input">
-        <IconButton  sx={{ p: '10px', color:'var(--primary)' }} aria-label="directions">
+        <IconButton  sx={{ p: '10px', color:'var(--primary)' }} aria-label="directions" onClick={submitText}>
           <SearchIcon />
         </IconButton>
       </Tooltip>
     </Paper>
+    
   );
 }
