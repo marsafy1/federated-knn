@@ -16,6 +16,12 @@ import Button from '@mui/material/Button';
 
 export default function SearchField({submitText, inputText, setInputText}) {
 
+  const preventDefault = (e)=>{
+    if (e.key === 'Enter') {
+      e.preventDefault();  // Prevents the form from being submitted
+      submitText();
+    }
+  }
   const handleChange = (e)=>{
     setInputText(e.target.value);
   }
@@ -46,6 +52,7 @@ export default function SearchField({submitText, inputText, setInputText}) {
         placeholder="Enter a Text to Classify"
         value={inputText}
         inputProps={{ 'aria-label': 'search google maps' }}
+        onKeyDownCapture={preventDefault}
         onChange={handleChange}
       />
       <Tooltip title="Generate Random Input">

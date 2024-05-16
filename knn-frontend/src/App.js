@@ -22,6 +22,23 @@ function App() {
   const loadingIconsCount = 8;
   const loadingIcons = Array.from({ length: loadingIconsCount }, (_, index) => index + 1); // Create an array [1, 2, 3, 4, 5]
 
+
+  const [data, setData] = useState({
+    'payload': {
+        'server': {
+            'class': 0,
+            'spam': 50
+        },
+        'clients': [
+            {'class': 0,'spam': 50, 'isPoisned':false},
+            {'class': 1,'spam': 50, 'isPoisned':false},
+            {'class': 0,'spam': 50, 'isPoisned':false},
+        ]
+    },
+    'status': 'success'
+})
+
+
   const submitText=()=>{
     // alert("hi "+inputText);
     classifyInputRequest();
@@ -29,8 +46,13 @@ function App() {
   const classifyInputRequest = async () => {
     setLoading(true);
     try {
-        const response = await axios.get(`http://127.0.0.1:5000/api/v1/classify?text=${inputText}`);
+        const response = await axios.get(`http://127.0.0.1:5000/api/v1/classify?text=${inputText}`, {
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        });
         await new Promise(r => setTimeout(r, 1500));
+        setData(response.data);
         console.log(response)
     } catch (error) {
         console.log(error);
@@ -50,7 +72,7 @@ function App() {
         </div>
         <div className="content_visuals">
           <div className="server_content">
-            <Server isPoisoned={false} SpamPer={20}/>
+            <Server isPoisoned={false} SpamPer={data['payload']['server']['spam']}/>
           </div>
           <div className="loading_content">
           {loading && (
@@ -65,9 +87,9 @@ function App() {
           </div>
           <div className='nodes_content'>
             <div className="nodes_container">
-              <Node isPoisoned={true} SpamPer={80}/>
-              <Node isPoisoned={false} SpamPer={30}/>
-              <Node isPoisoned={true} SpamPer={20}/>
+              <Node isPoisoned={data['payload']['clients'][0]['isPoisned']} SpamPer={data['payload']['clients'][0]['spam']}/>
+              <Node isPoisoned={data['payload']['clients'][1]['isPoisned']} SpamPer={data['payload']['clients'][1]['spam']}/>
+              <Node isPoisoned={data['payload']['clients'][2]['isPoisned']} SpamPer={data['payload']['clients'][2]['spam']}/>
             </div>
           </div>
         </div>

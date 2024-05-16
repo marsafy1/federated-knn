@@ -6,10 +6,10 @@ import pandas as pd
 import random
 
 from flask import Flask, request, jsonify
-from flask_cors import CORS, cross_origin
+from flask_cors import CORS
 
 app = Flask(__name__)
-cors = CORS(app)
+CORS(app)
 app.config['CORS_HEADERS'] = 'Content-Type'
 
 # Load the CSV file
@@ -46,15 +46,15 @@ def handle_classification():
 
     # prepare the response
     response = {
-        'data': {
+        'payload': {
             'server': {
                 'class': 0,
-                'spam': 85
+                'spam': random.randint(1, 100)
             },
             'clients': [
-                {'class': 0,'spam': 85},
-                {'class': 1,'spam': 85},
-                {'class': 0,'spam': 85},
+                {'class': 0,'spam': random.randint(1, 100), 'isPoisned': [False, True][random.randint(0, 1)]},
+                {'class': 1,'spam': random.randint(1, 100), 'isPoisned': [False, True][random.randint(0, 1)]},
+                {'class': 0,'spam': random.randint(1, 100), 'isPoisned': [False, True][random.randint(0, 1)]},
             ]
         },
         'status': 'success'
@@ -66,7 +66,7 @@ def handle_classification():
         status = 400 # bad request code
     else:
         # classify
-        response['data']['server']['class'] = get_class_for_input(text)
+        response['payload']['server']['class'] = get_class_for_input(text)
         print("----will send----")
         print(response)
 
