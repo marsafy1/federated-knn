@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import axios from 'axios';
+
 import './App.css';
 
 // components folder
@@ -14,14 +16,27 @@ import Button from '@mui/material/Button';
 
 function App() {
   const [inputText, setInputText] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const loadingIconsCount = 8;
   const loadingIcons = Array.from({ length: loadingIconsCount }, (_, index) => index + 1); // Create an array [1, 2, 3, 4, 5]
 
-  var isLoading = true;
   const submitText=()=>{
-    alert("hi "+inputText);
+    // alert("hi "+inputText);
+    classifyInputRequest();
   }
+  const classifyInputRequest = async () => {
+    setLoading(true);
+    try {
+        
+        const response = await axios.get(`http://127.0.0.1:5000/api/v1/classify?text=${inputText}`);
+        console.log(response)
+    } catch (error) {
+        console.log(error);
+    } finally {
+        setLoading(false);
+    }
+};
   return (
     <div className="App">
       {/* <Navbar/> */}
@@ -37,7 +52,7 @@ function App() {
             <Server isPoisoned={false} SpamPer={20}/>
           </div>
           <div className="loading_content">
-          {isLoading && (
+          {loading && (
             <div className='import_icons_row'>
               {loadingIcons.map(index => (
               <div key={index} index={index} className='import_export_container'>
