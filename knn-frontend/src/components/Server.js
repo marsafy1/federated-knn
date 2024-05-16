@@ -2,6 +2,8 @@ import { height } from '@mui/system';
 import React from 'react';
 import DangerousIcon from '@mui/icons-material/Dangerous';
 import Poison from '../assets/poison.png'
+import Valid from '../assets/valid.png'
+import Spam from '../assets/spam_1.png'
 
 export default function Server({ isPoisoned, SpamPer }) {
   return (
@@ -12,11 +14,11 @@ export default function Server({ isPoisoned, SpamPer }) {
             </div>
         )}
         <div className={`server ${SpamPer>=50 ? 'server_invalid' : 'server_valid'}`}>
-            <div className='server_class server_ham_class' style={{width:`${100 - SpamPer}%`}}>
-                Ham <br/> {100 - SpamPer}%
+            <div className='server_class server_ham_class' style={{width:`${100 - SpamPer}%`, flexDirection:'column'}}>
+                <img src={Valid} alt="Valid" />  {100 - SpamPer}%
             </div>
-            <div className='server_class server_spam_class' style={{width:`${SpamPer}%`}}>
-                Spam <br/> {SpamPer}%
+            <div className='server_class server_spam_class' style={{width:`${SpamPer}%`, flexDirection:'column'}}>
+                <img src={Spam} alt="Valid" />  {SpamPer}%
             </div>
         </div>
     </div>
