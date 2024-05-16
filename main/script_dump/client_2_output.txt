@@ -1,0 +1,23 @@
+/Users/marsafy/Code/projects/seminar/env/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+Client 1 up and running...
+Traceback (most recent call last):
+  File "/Users/marsafy/Code/projects/seminar/main/client.py", line 102, in <module>
+    init_model()
+  File "/Users/marsafy/Code/projects/seminar/main/client.py", line 87, in init_model
+    get_and_process_data()
+  File "/Users/marsafy/Code/projects/seminar/main/client.py", line 46, in get_and_process_data
+    local_data = split_dataset()
+  File "/Users/marsafy/Code/projects/seminar/main/client.py", line 51, in split_dataset
+    data = pd.read_csv(file_path)
+  File "/Users/marsafy/Code/projects/seminar/env/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/Users/marsafy/Code/projects/seminar/env/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/Users/marsafy/Code/projects/seminar/env/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+  File "/Users/marsafy/Code/projects/seminar/env/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+  File "/Users/marsafy/Code/projects/seminar/env/lib/python3.9/site-packages/pandas/io/common.py", line 873, in get_handle
+    handle = open(
+FileNotFoundError: [Errno 2] No such file or directory: '../datasets/new_spam.csv'

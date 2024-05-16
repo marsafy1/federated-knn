@@ -1,0 +1,30 @@
+Server up and running...
+{'client_0': False, 'client_1': False, 'client_2': False}
+input@user: mohamed is super good. win for free free free free
+client_task@server: mohamed is super good. win for free free free free
+Traceback (most recent call last):
+  File "/Users/marsafy/Code/projects/seminar/main/server.py", line 87, in <module>
+    for message in redisObject.get_pubsub().listen():
+  File "/Users/marsafy/Code/projects/seminar/env/lib/python3.9/site-packages/redis/client.py", line 996, in listen
+    response = self.handle_message(self.parse_response(block=True))
+  File "/Users/marsafy/Code/projects/seminar/env/lib/python3.9/site-packages/redis/client.py", line 835, in parse_response
+    response = self._execute(conn, try_read)
+  File "/Users/marsafy/Code/projects/seminar/env/lib/python3.9/site-packages/redis/client.py", line 811, in _execute
+    return conn.retry.call_with_retry(
+  File "/Users/marsafy/Code/projects/seminar/env/lib/python3.9/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+  File "/Users/marsafy/Code/projects/seminar/env/lib/python3.9/site-packages/redis/client.py", line 812, in <lambda>
+    lambda: command(*args, **kwargs),
+  File "/Users/marsafy/Code/projects/seminar/env/lib/python3.9/site-packages/redis/client.py", line 833, in try_read
+    return conn.read_response(disconnect_on_error=False, push_request=True)
+  File "/Users/marsafy/Code/projects/seminar/env/lib/python3.9/site-packages/redis/connection.py", line 512, in read_response
+    response = self._parser.read_response(disable_decoding=disable_decoding)
+  File "/Users/marsafy/Code/projects/seminar/env/lib/python3.9/site-packages/redis/_parsers/resp2.py", line 15, in read_response
+    result = self._read_response(disable_decoding=disable_decoding)
+  File "/Users/marsafy/Code/projects/seminar/env/lib/python3.9/site-packages/redis/_parsers/resp2.py", line 25, in _read_response
+    raw = self._buffer.readline()
+  File "/Users/marsafy/Code/projects/seminar/env/lib/python3.9/site-packages/redis/_parsers/socket.py", line 115, in readline
+    self._read_from_socket()
+  File "/Users/marsafy/Code/projects/seminar/env/lib/python3.9/site-packages/redis/_parsers/socket.py", line 65, in _read_from_socket
+    data = self._sock.recv(socket_read_size)
+KeyboardInterrupt

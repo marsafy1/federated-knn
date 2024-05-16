@@ -11,7 +11,7 @@ export default function SearchField() {
   return (
     <Paper
       component="form"
-      sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', width: 700, backgroundColor: 'var(--secondary-bg)', border: '1px solid var(--primary)' }}
+      sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', width: '100%', backgroundColor: 'var(--secondary-bg)', border: '1px solid var(--primary)' }}
     >
       <IconButton sx={{ p: '10px', color:'var(--primary)'}} aria-label="menu">
         <MenuIcon />
