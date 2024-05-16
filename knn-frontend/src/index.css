@@ -6,6 +6,7 @@
   /* --secondary-bg: rgb(22, 24, 27); */
   --secondary-bg: rgb(28, 35, 49);
   --canary: rgb(255, 239, 0);
+  --gray: rgb(166, 177, 203);
 
   --valid-color: rgb(177, 237, 74);
   --invalid-color: rgb(222, 0, 0);

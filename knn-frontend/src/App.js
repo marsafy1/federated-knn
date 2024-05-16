@@ -14,6 +14,7 @@ import LocalClassification from './assets/phone_classification.mp4'
 import ImportExportIcon from '@mui/icons-material/ImportExport';
 import Button from '@mui/material/Button';
 import LoadingButton from '@mui/lab/LoadingButton';
+import Waiting from './assets/waiting.png'
 
 function App() {
   const [inputText, setInputText] = useState("");
@@ -22,6 +23,7 @@ function App() {
   const loadingIconsCount = 8;
   const loadingIcons = Array.from({ length: loadingIconsCount }, (_, index) => index + 1); // Create an array [1, 2, 3, 4, 5]
 
+  const [noInputAtAll, setNoInputAtAll] = useState(true);
 
   const [data, setData] = useState({
     'payload': {
@@ -45,6 +47,7 @@ function App() {
   }
   const classifyInputRequest = async () => {
     setLoading(true);
+    setNoInputAtAll(false);
     try {
         const response = await axios.get(`http://127.0.0.1:5000/api/v1/classify?text=${inputText}`, {
           headers: {
@@ -70,7 +73,7 @@ function App() {
             <LoadingButton loading={loading} variant="contained" sx={{ marginLeft:'10px', background:'var(--primary)', fontWeight:'bolder', color:'var(--primary-bg)', height:'50px' }} onClick={submitText}>{loading? 'Classify':'Classify'}</LoadingButton>
           {/* </form> */}
         </div>
-        <div className="content_visuals">
+        {!noInputAtAll && <div className="content_visuals">
           <div className="server_content">
             <Server isPoisoned={false} SpamPer={data['payload']['server']['spam']}/>
           </div>
@@ -92,7 +95,13 @@ function App() {
               <Node isPoisoned={data['payload']['clients'][2]['isPoisned']} SpamPer={data['payload']['clients'][2]['spam']}/>
             </div>
           </div>
-        </div>
+        </div>}
+        {noInputAtAll && <div className='noInput'>
+            <img src={Waiting} className="waiting_img" alt="poisoned" />
+            <div class='noInput_message'>
+              <h2>Let's start by writing a text to be <span class='primary-color'>classified</span>!</h2>
+            </div>
+          </div>}
       </div>
     </div>
   );
