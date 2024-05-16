@@ -1,23 +1,63 @@
 /Users/marsafy/Code/projects/seminar/env/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
   warnings.warn(
+/Users/marsafy/Code/projects/seminar/env/lib/python3.9/site-packages/sklearn/model_selection/_split.py:737: UserWarning: The least populated class in y has only 1 members, which is less than n_splits=3.
+  warnings.warn(
 Client 0 up and running...
+I'm @client_0 - will classify => test
+I'm @client_0 - classified test as => 1
+I'm @client_0 - will classify => test
+I'm @client_0 - classified test as => 1
+I'm @client_0 - will classify => test
+I'm @client_0 - classified test as => 1
+I'm @client_0 - will classify => test
+I'm @client_0 - classified test as => 1
+I'm @client_0 - will classify => "Nah I don't think he goes to usf, he lives around here though"
+I'm @client_0 - classified "Nah I don't think he goes to usf, he lives around here though" as => 0
+I'm @client_0 - will classify => "Nah I don't think he goes to usf, he lives around here though"
+I'm @client_0 - classified "Nah I don't think he goes to usf, he lives around here though" as => 0
+I'm @client_0 - will classify => "Nah I don't think he goes to usf, he lives around here though"
+I'm @client_0 - classified "Nah I don't think he goes to usf, he lives around here though" as => 0
+I'm @client_0 - will classify => "Nah I don't think he goes to usf, he lives around here though"
+I'm @client_0 - classified "Nah I don't think he goes to usf, he lives around here though" as => 0
+I'm @client_0 - will classify => "FreeMsg Hey there darling it's been 3 week's now and no word back! I'd like some fun you up for it still? Tb ok! XxX std chgs to send, £1.50 to rcv"
+I'm @client_0 - classified "FreeMsg Hey there darling it's been 3 week's now and no word back! I'd like some fun you up for it still? Tb ok! XxX std chgs to send, £1.50 to rcv" as => 0
+I'm @client_0 - will classify => "FreeMsg Hey there darling it's been 3 week's now and no word back! I'd like some fun you up for it still? Tb ok! XxX std chgs to send, £1.50 to rcv"
+I'm @client_0 - classified "FreeMsg Hey there darling it's been 3 week's now and no word back! I'd like some fun you up for it still? Tb ok! XxX std chgs to send, £1.50 to rcv" as => 0
+I'm @client_0 - will classify => "FreeMsg Hey there darling it's been 3 week's now and no word back! I'd like some fun you up for it still? Tb ok! XxX std chgs to send, £1.50 to rcv"
+I'm @client_0 - classified "FreeMsg Hey there darling it's been 3 week's now and no word back! I'd like some fun you up for it still? Tb ok! XxX std chgs to send, £1.50 to rcv" as => 0
+I'm @client_0 - will classify => "FreeMsg Hey there darling it's been 3 week's now and no word back! I'd like some fun you up for it still? Tb ok! XxX std chgs to send, £1.50 to rcv"
+I'm @client_0 - classified "FreeMsg Hey there darling it's been 3 week's now and no word back! I'd like some fun you up for it still? Tb ok! XxX std chgs to send, £1.50 to rcv" as => 0
+I'm @client_0 - will classify => "e"
+I'm @client_0 - classified "e" as => 1
+I'm @client_0 - will classify => "e"
+I'm @client_0 - classified "e" as => 1
+I'm @client_0 - will classify => "e"
+I'm @client_0 - classified "e" as => 1
+I'm @client_0 - will classify => "e"
+I'm @client_0 - classified "e" as => 1
 Traceback (most recent call last):
-  File "/Users/marsafy/Code/projects/seminar/main/client.py", line 102, in <module>
-    init_model()
-  File "/Users/marsafy/Code/projects/seminar/main/client.py", line 87, in init_model
-    get_and_process_data()
-  File "/Users/marsafy/Code/projects/seminar/main/client.py", line 46, in get_and_process_data
-    local_data = split_dataset()
-  File "/Users/marsafy/Code/projects/seminar/main/client.py", line 51, in split_dataset
-    data = pd.read_csv(file_path)
-  File "/Users/marsafy/Code/projects/seminar/env/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 1026, in read_csv
-    return _read(filepath_or_buffer, kwds)
-  File "/Users/marsafy/Code/projects/seminar/env/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 620, in _read
-    parser = TextFileReader(filepath_or_buffer, **kwds)
-  File "/Users/marsafy/Code/projects/seminar/env/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 1620, in __init__
-    self._engine = self._make_engine(f, self.engine)
-  File "/Users/marsafy/Code/projects/seminar/env/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 1880, in _make_engine
-    self.handles = get_handle(
-  File "/Users/marsafy/Code/projects/seminar/env/lib/python3.9/site-packages/pandas/io/common.py", line 873, in get_handle
-    handle = open(
-FileNotFoundError: [Errno 2] No such file or directory: '../datasets/new_spam.csv'
+  File "/Users/marsafy/Code/projects/seminar/main/client.py", line 103, in <module>
+    for message in redisObject.get_pubsub().listen():
+  File "/Users/marsafy/Code/projects/seminar/env/lib/python3.9/site-packages/redis/client.py", line 996, in listen
+    response = self.handle_message(self.parse_response(block=True))
+  File "/Users/marsafy/Code/projects/seminar/env/lib/python3.9/site-packages/redis/client.py", line 835, in parse_response
+    response = self._execute(conn, try_read)
+  File "/Users/marsafy/Code/projects/seminar/env/lib/python3.9/site-packages/redis/client.py", line 811, in _execute
+    return conn.retry.call_with_retry(
+  File "/Users/marsafy/Code/projects/seminar/env/lib/python3.9/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+  File "/Users/marsafy/Code/projects/seminar/env/lib/python3.9/site-packages/redis/client.py", line 812, in <lambda>
+    lambda: command(*args, **kwargs),
+  File "/Users/marsafy/Code/projects/seminar/env/lib/python3.9/site-packages/redis/client.py", line 833, in try_read
+    return conn.read_response(disconnect_on_error=False, push_request=True)
+  File "/Users/marsafy/Code/projects/seminar/env/lib/python3.9/site-packages/redis/connection.py", line 512, in read_response
+    response = self._parser.read_response(disable_decoding=disable_decoding)
+  File "/Users/marsafy/Code/projects/seminar/env/lib/python3.9/site-packages/redis/_parsers/resp2.py", line 15, in read_response
+    result = self._read_response(disable_decoding=disable_decoding)
+  File "/Users/marsafy/Code/projects/seminar/env/lib/python3.9/site-packages/redis/_parsers/resp2.py", line 25, in _read_response
+    raw = self._buffer.readline()
+  File "/Users/marsafy/Code/projects/seminar/env/lib/python3.9/site-packages/redis/_parsers/socket.py", line 115, in readline
+    self._read_from_socket()
+  File "/Users/marsafy/Code/projects/seminar/env/lib/python3.9/site-packages/redis/_parsers/socket.py", line 65, in _read_from_socket
+    data = self._sock.recv(socket_read_size)
+KeyboardInterrupt
