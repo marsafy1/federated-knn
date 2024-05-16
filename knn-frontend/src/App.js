@@ -9,7 +9,7 @@ import LocalClassification from './assets/phone_classification.mp4'
 // simple mui components
 // import TextField from '@mui/material/TextField';
 import ImportExportIcon from '@mui/icons-material/ImportExport';
-
+import Button from '@mui/material/Button';
 
 function App() {
   const loadingIconsCount = 8;
@@ -24,6 +24,7 @@ function App() {
         <div className="content_input">
           {/* <form> */}
             <SearchField/>
+            <Button variant="contained" sx={{ marginLeft:'10px', background:'var(--primary)', fontWeight:'bolder', color:'var(--primary-bg)', height:'50px' }}>Contained</Button>
           {/* </form> */}
         </div>
         <div className="content_visuals">
