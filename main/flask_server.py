@@ -34,7 +34,17 @@ def handle_classification():
 
     # prepare the response
     response = {
-        'data': '',
+        'data': {
+            'server': {
+                'class': 0,
+                'spam': 85
+            },
+            'clients': [
+                {'class': 0,'spam': 85},
+                {'class': 1,'spam': 85},
+                {'class': 0,'spam': 85},
+            ]
+        },
         'status': 'success'
     }
     status = 200
@@ -44,7 +54,7 @@ def handle_classification():
         status = 400 # bad request code
     else:
         # classify
-        response['data'] = get_class_for_input(text)
+        response['data']['server']['class'] = get_class_for_input(text)
         print("----will send----")
         print(response)
 
