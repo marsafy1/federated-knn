@@ -1,5 +1,4 @@
 .App {
-  border: 2px solid green;
   height: 100%;
 
   display: flex;
@@ -8,13 +7,11 @@
 }
 
 .content{
-  border: 10px solid red;
   height: 100%;
   padding: 20px;
 }
 
 .content_input{
-  border: 2px solid orange;
   height: 10%;
 
   display: flex;
@@ -23,12 +20,10 @@
 }
 
 .content_visuals{
-  border: 2px solid blue;
   height: 90%;
 }
 
 .server_content{
-  border: 2px solid red;
   height: 40%;
 
   display: flex;
@@ -38,7 +33,6 @@
 
 .loading_content{
   height: 10%;
-  border: 2px solid orange;
 
   display: flex;
   justify-content: center;
@@ -46,7 +40,6 @@
 }
 
 .nodes_content{
-  border: 2px solid green;
   height: 50%;
 
   display: flex;
@@ -57,7 +50,7 @@
 
 .node{
   color: white;
-  /* border: 2px solid black; */
+  
   height: 250px;
   width: 150px;
 
@@ -72,7 +65,7 @@
 
 .server{
   color: white;
-  /* border: 2px solid black; */
+  font-weight: bold;
   height: 150px;
   width: 350px;
 
@@ -84,47 +77,47 @@
   justify-content: space-around;
   align-items: center;
 }
-
+.server img{
+  width: 60px;
+  height: 60px;
+}
 .node_valid{
   background-color: transparent;
-  box-shadow: 0px 0px 15px 15px rgba(30, 222, 0, 0.75);
+  box-shadow: 0px 0px 15px 15px var(--valid-opacity-bg);
 }
 
 .node_invalid{
   background-color: transparent;
-  box-shadow: 0px 0px 15px 15px rgba(222, 0, 0, 0.75);
+  box-shadow: 0px 0px 15px 15px var(--invalid-opacity-bg);
 }
 
 .node_class{
-  /* border: 2px solid blue; */
   width: 100%;
 
-  border: 2px solid purple;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .node_ham_class{
-  background-color: rgba(30, 222, 0, 0.75);
+  background-color: var(--valid-opacity-bg);
 }
 
 .node_spam_class{
-  background-color: rgba(222, 0, 0, 0.75);
+  background-color: var(--invalid-opacity-bg);
 }
 
 .server_valid{
   background-color: transparent;
-  box-shadow: 0px 0px 15px 15px rgba(30, 222, 0, 0.75);
+  box-shadow: 0px 0px 15px 15px var(--valid-opacity-bg);
 }
 
 .server_invalid{
   background-color: transparent;
-  box-shadow: 0px 0px 15px 15px rgba(222, 0, 0, 0.75);
+  box-shadow: 0px 0px 15px 15px var(--invalid-opacity-bg);
 }
 
 .server_class{
-  /* border: 2px solid blue; */
   height: 100%;
 
   display: flex;
@@ -133,11 +126,11 @@
 }
 
 .server_ham_class{
-  background-color: rgba(30, 222, 0, 0.75);
+  background-color: var(--valid-opacity-bg);
 }
 
 .server_spam_class{
-  background-color: rgba(222, 0, 0, 0.75);
+  background-color: var(--invalid-opacity-bg);
 }
 
 .poison_img{
@@ -146,7 +139,6 @@
 }
 
 .node_container{
-  border: 21px solid blue;
   position: relative;
 }
 
@@ -154,21 +146,20 @@
   position: absolute;
   top: -50px;
   left: -40px;
-  border: 2px solid red;
+
   transform: rotate(-20deg);
 }
 
 .import_icons_row{
   height: 100%;
   width: 50%;
-  border: 2px solid blue;
+  
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
 
 .import_export_container{
-  border: 1px solid green;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -178,7 +169,6 @@
   color: white;
 
   font-size: 50px !important;
-  border: 2px solid red;
   animation: moveUpDown 2s infinite; /* Apply the animation */
 
 }
@@ -193,8 +183,8 @@
 }
 
 .node_class_img{
-  width: 70px;
-  height: 70px;
+  width: 50px;
+  height: 50px;
 }
 
 .node_class_per{

@@ -25,7 +25,7 @@ export default function SearchField() {
         <SearchIcon />
       </IconButton>
       <Divider sx={{ height: 28, m: 0.5 }} orientation="vertical" />
-      <IconButton color="primary" sx={{ p: '10px' }} aria-label="directions">
+      <IconButton  sx={{ p: '10px', color:'var(--primary)' }} aria-label="directions">
         <DirectionsIcon />
       </IconButton>
     </Paper>

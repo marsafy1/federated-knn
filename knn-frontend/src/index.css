@@ -1,8 +1,17 @@
 :root {
-  --primary: rgb(56, 116, 203);
-  --primary-bg: rgb(16, 18, 20);
-  --secondary-bg: rgb(22, 24, 27);
+  /* --primary: rgb(56, 116, 203); */
+  --primary: rgb(177, 237, 74);
+  /* --primary-bg: rgb(16, 18, 20); */
+  --primary-bg: rgb(18, 24, 37);
+  /* --secondary-bg: rgb(22, 24, 27); */
+  --secondary-bg: rgb(28, 35, 49);
   --canary: rgb(255, 239, 0);
+
+  --valid-color: rgb(30, 222, 0);
+  --invalid-color: rgb(222, 0, 0);
+
+  --valid-opacity-bg: rgba(30, 222, 0, 0.75);
+  --invalid-opacity-bg: rgba(222, 0, 0, 0.75);
 }
 
 
@@ -18,7 +27,6 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  border: 2px solid red;
   height: 100vh;
   background-color: var(--primary-bg);
 }

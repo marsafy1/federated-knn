@@ -16,7 +16,7 @@ export default function Node({ isPoisoned, SpamPer }) {
             <div className={`node ${SpamPer>=50 ? 'node_invalid' : 'node_valid'}`}>
                 <div className='node_class node_ham_class' style={{height:`${100 - SpamPer}%`}}>
                     <div className='node_class_img'>
-                        <img src={Valid} className="poison_img" alt="poisoned" /> 
+                        <img src={Valid} className="node_class_img" alt="Valid" /> 
                     </div>
                     <div className='node_class_per'>
                         {100 - SpamPer}%
@@ -24,7 +24,7 @@ export default function Node({ isPoisoned, SpamPer }) {
                 </div>
                 <div className='node_class node_spam_class' style={{height:`${SpamPer}%`}}>
                     <div className='node_class_img'>
-                        <img src={Spam} className="poison_img" alt="poisoned" /> 
+                        <img src={Spam} className="node_class_img" alt="poisoned" /> 
                     </div>
                     <div className='node_class_per'>
                         {SpamPer}%
