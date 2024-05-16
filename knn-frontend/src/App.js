@@ -42,10 +42,12 @@ function App() {
             </div>
           )}
           </div>
-          <div className="nodes_content">
-            <Node isPoisoned={true} SpamPer={80}/>
-            <Node isPoisoned={false} SpamPer={30}/>
-            <Node isPoisoned={true} SpamPer={20}/>
+          <div className='nodes_content'>
+            <div className="nodes_container">
+              <Node isPoisoned={true} SpamPer={80}/>
+              <Node isPoisoned={false} SpamPer={30}/>
+              <Node isPoisoned={true} SpamPer={20}/>
+            </div>
           </div>
         </div>
       </div>
