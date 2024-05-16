@@ -2,6 +2,9 @@ import subprocess
 import os
 from MyRedis import MyRedis
 
+import pandas as pd
+import random
+
 from flask import Flask, request, jsonify
 from flask_cors import CORS, cross_origin
 
@@ -9,7 +12,8 @@ app = Flask(__name__)
 cors = CORS(app)
 app.config['CORS_HEADERS'] = 'Content-Type'
 
-
+# Load the CSV file
+df = pd.read_csv('../datasets/new_spam.csv')
 
 def start_process(script, args=[], identifier=""):
     """ Helper function to start a process with redirected output to a specific file in the script_dump folder. """
@@ -25,6 +29,14 @@ def start_process(script, args=[], identifier=""):
 
 
 
+
+@app.route('/api/v1/randomInput', methods=['GET'])
+def handle_random_input():
+    # Select a random record
+    random_record = df.sample(n=1)
+    message = random_record['Message'].iloc[0]
+
+    return message
 
 
 @app.route('/api/v1/classify', methods=['GET'])

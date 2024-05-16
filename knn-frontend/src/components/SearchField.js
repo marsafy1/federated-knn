@@ -1,3 +1,4 @@
+import axios from 'axios';
 import Paper from '@mui/material/Paper';
 import InputBase from '@mui/material/InputBase';
 import Divider from '@mui/material/Divider';
@@ -13,11 +14,25 @@ import ShuffleIcon from '@mui/icons-material/Shuffle';
 import Tooltip from '@mui/material/Tooltip';
 import Button from '@mui/material/Button';
 
-export default function SearchField({submitText, setInputText}) {
+export default function SearchField({submitText, inputText, setInputText}) {
 
   const handleChange = (e)=>{
     setInputText(e.target.value);
   }
+
+  const getRandomInput = async () => {
+
+    try {
+        const response = await axios.get(`http://127.0.0.1:5000/api/v1/randomInput`);
+        console.log(response.data);
+        setInputText(response.data);
+    } catch (error) {
+        console.log(error);
+    } finally {
+
+    }
+  };
+
   return (
     <Paper
       component="form"
@@ -29,11 +44,12 @@ export default function SearchField({submitText, setInputText}) {
       <InputBase
         sx={{ ml: 1, flex: 1 , color:'white'}}
         placeholder="Enter a Text to Classify"
+        value={inputText}
         inputProps={{ 'aria-label': 'search google maps' }}
         onChange={handleChange}
       />
       <Tooltip title="Generate Random Input">
-        <IconButton type="button" sx={{ p: '10px', color:'var(--primary)'}} aria-label="search">
+        <IconButton type="button" sx={{ p: '10px', color:'var(--primary)'}} aria-label="search" onClick={getRandomInput}>
           <ShuffleIcon />
         </IconButton>
       </Tooltip>

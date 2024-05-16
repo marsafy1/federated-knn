@@ -237,3 +237,7 @@
   background-color: var(--secondary-bg) !important;
   box-shadow: none !important;
 }
+
+.css-cez7qs-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root.Mui-disabled{
+  background-color: var(--secondary-bg) !important;
+}

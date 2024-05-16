@@ -13,6 +13,7 @@ import LocalClassification from './assets/phone_classification.mp4'
 // import TextField from '@mui/material/TextField';
 import ImportExportIcon from '@mui/icons-material/ImportExport';
 import Button from '@mui/material/Button';
+import LoadingButton from '@mui/lab/LoadingButton';
 
 function App() {
   const [inputText, setInputText] = useState("");
@@ -28,8 +29,8 @@ function App() {
   const classifyInputRequest = async () => {
     setLoading(true);
     try {
-        
         const response = await axios.get(`http://127.0.0.1:5000/api/v1/classify?text=${inputText}`);
+        await new Promise(r => setTimeout(r, 1500));
         console.log(response)
     } catch (error) {
         console.log(error);
@@ -43,8 +44,8 @@ function App() {
       <div className="content">
         <div className="content_input">
           {/* <form> */}
-            <SearchField submitText={submitText} setInputText={setInputText}/>
-            <Button variant="contained" sx={{ marginLeft:'10px', background:'var(--primary)', fontWeight:'bolder', color:'var(--primary-bg)', height:'50px' }} onClick={submitText}>Classify</Button>
+            <SearchField submitText={submitText} inputText={inputText} setInputText={setInputText}/>
+            <LoadingButton loading={loading} variant="contained" sx={{ marginLeft:'10px', background:'var(--primary)', fontWeight:'bolder', color:'var(--primary-bg)', height:'50px' }} onClick={submitText}>{loading? 'Classify':'Classify'}</LoadingButton>
           {/* </form> */}
         </div>
         <div className="content_visuals">
