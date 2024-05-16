@@ -227,3 +227,13 @@
   font-size: medium;
   font-weight: bolder;
 }
+
+.MuiButton-root{
+  transition: all 0.4s !important;
+}
+
+.MuiButton-root:hover{
+  color: var(--primary) !important;
+  background-color: var(--secondary-bg) !important;
+  box-shadow: none !important;
+}

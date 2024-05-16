@@ -24,7 +24,7 @@ function App() {
         <div className="content_input">
           {/* <form> */}
             <SearchField/>
-            <Button variant="contained" sx={{ marginLeft:'10px', background:'var(--primary)', fontWeight:'bolder', color:'var(--primary-bg)', height:'50px' }}>Contained</Button>
+            <Button variant="contained" sx={{ marginLeft:'10px', background:'var(--primary)', fontWeight:'bolder', color:'var(--primary-bg)', height:'50px' }}>Classify</Button>
           {/* </form> */}
         </div>
         <div className="content_visuals">
