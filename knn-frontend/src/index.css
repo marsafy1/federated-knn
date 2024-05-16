@@ -7,11 +7,14 @@
   --secondary-bg: rgb(28, 35, 49);
   --canary: rgb(255, 239, 0);
 
-  --valid-color: rgb(30, 222, 0);
+  --valid-color: rgb(177, 237, 74);
   --invalid-color: rgb(222, 0, 0);
 
   --valid-opacity-bg: rgba(30, 222, 0, 0.75);
   --invalid-opacity-bg: rgba(222, 0, 0, 0.75);
+
+  --border-radius: 5px;
+  --border-width: 1px;
 }
 
 

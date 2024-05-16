@@ -83,12 +83,12 @@
 }
 .node_valid{
   background-color: transparent;
-  box-shadow: 0px 0px 15px 15px var(--valid-opacity-bg);
+  /* box-shadow: 0px 0px 15px 15px var(--valid-opacity-bg); */
 }
 
 .node_invalid{
   background-color: transparent;
-  box-shadow: 0px 0px 15px 15px var(--invalid-opacity-bg);
+  /* box-shadow: 0px 0px 15px 15px var(--invalid-opacity-bg); */
 }
 
 .node_class{
@@ -100,21 +100,28 @@
 }
 
 .node_ham_class{
-  background-color: var(--valid-opacity-bg);
+  /* background-color: var(--valid-opacity-bg); */
+  background-color: rgba(66, 149, 202, 0.25);
+  border-radius: var(--border-radius);
+  border: var(--border-width) solid var(--valid-color);
+  margin-bottom: 5px;
 }
 
 .node_spam_class{
-  background-color: var(--invalid-opacity-bg);
+  /* background-color: var(--invalid-opacity-bg); */
+  background-color: rgba(172, 0, 0, 0.40);
+  border-radius: var(--border-radius);
+  border: var(--border-width) solid var(--valid-color);
 }
 
 .server_valid{
   background-color: transparent;
-  box-shadow: 0px 0px 15px 15px var(--valid-opacity-bg);
+  /* box-shadow: 0px 0px 15px 15px var(--valid-opacity-bg); */
 }
 
 .server_invalid{
   background-color: transparent;
-  box-shadow: 0px 0px 15px 15px var(--invalid-opacity-bg);
+  /* box-shadow: 0px 0px 15px 15px var(--invalid-opacity-bg); */
 }
 
 .server_class{
@@ -126,11 +133,18 @@
 }
 
 .server_ham_class{
-  background-color: var(--valid-opacity-bg);
+  /* background-color: var(--valid-opacity-bg); */
+  background-color: rgba(66, 149, 202, 0.25);
+  border-radius: var(--border-radius);
+  border: var(--border-width) solid var(--valid-color);
+  margin-right: 5px;
 }
 
 .server_spam_class{
-  background-color: var(--invalid-opacity-bg);
+  /* background-color: var(--invalid-opacity-bg); */
+  background-color: rgba(172, 0, 0, 0.40);
+  border-radius: var(--border-radius);
+  border: var(--border-width) solid var(--valid-color);
 }
 
 .poison_img{
