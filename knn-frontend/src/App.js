@@ -12,7 +12,7 @@ import LocalClassification from './assets/phone_classification.mp4'
 // simple mui components
 import ImportExportIcon from '@mui/icons-material/ImportExport';
 import LoadingButton from '@mui/lab/LoadingButton';
-import Waiting from './assets/waiting.png'
+import Waiting from './assets/turtle.png'
 import Chip from '@mui/material/Chip';
 import Stack from '@mui/material/Stack';
 
