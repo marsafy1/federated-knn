@@ -7,7 +7,6 @@ import './App.css';
 import SearchField from './components/SearchField';
 import Node from './components/Node';
 import Server from './components/Server';
-import LocalClassification from './assets/phone_classification.mp4'
 
 // simple mui components
 import ImportExportIcon from '@mui/icons-material/ImportExport';
@@ -110,8 +109,8 @@ function App() {
         </div>}
         {noInputAtAll && <div className='noInput'>
             <img src={Waiting} className="waiting_img" alt="poisoned" />
-            <div class='noInput_message'>
-              <h2>Let's start by writing a text to be <span class='primary-color'>classified</span>!</h2>
+            <div className='noInput_message'>
+              <h2>Let's start by writing a text to be <span className='primary-color'>classified</span>!</h2>
             </div>
           </div>}
       </div>
