@@ -8,7 +8,7 @@ import ShuffleIcon from '@mui/icons-material/Shuffle';
 import Tooltip from '@mui/material/Tooltip';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 
-export default function SearchField({submitText, inputText, setInputText}) {
+export default function SearchField({submitText, inputText, aggLoading, setInputText}) {
 
   const preventDefault = (e)=>{
     if (e.key === 'Enter') {
@@ -76,9 +76,10 @@ export default function SearchField({submitText, inputText, setInputText}) {
         inputProps={{ 'aria-label': 'search google maps' }}
         onKeyDownCapture={preventDefault}
         onChange={handleChange}
+        disabled={aggLoading}
       />
       <Tooltip title="Generate Random Input">
-        <IconButton type="button" sx={{ p: '10px', color:'var(--primary)'}} aria-label="search" onClick={getRandomInput}>
+        <IconButton disabled={aggLoading} type="button" sx={{ p: '10px', color:'var(--primary)'}} aria-label="search" onClick={getRandomInput}>
           <ShuffleIcon />
         </IconButton>
       </Tooltip>
