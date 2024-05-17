@@ -84,7 +84,7 @@ function App() {
         <div className='content_input_container'>
             <div className="content_input">
               <SearchField submitText={submitText} aggLoading={aggLoading} inputText={inputText} setInputText={setInputText}/>
-              <LoadingButton disabled={aggLoading} loading={loading} variant="contained" sx={{ marginLeft:'10px', background:'var(--primary)', fontWeight:'bolder', color:'var(--primary-bg)', height:'50px' }} onClick={submitText}>{loading? 'Classify':'Classify'}</LoadingButton>
+              <LoadingButton  loading={loading} variant="contained" sx={{ marginLeft:'10px', background:'var(--primary)', fontWeight:'bolder', color:'var(--primary-bg)', height:'50px' }} onClick={submitText}>{loading? 'Classify':'Classify'}</LoadingButton>
             </div>
             <div className='options_row'>
               <div style={{marginRight:'10px', display:'flex', justifyContent:'center', alignItems:'center'}}>

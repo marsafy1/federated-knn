@@ -10,7 +10,7 @@ from flask_cors import CORS
 
 app = Flask(__name__)
 # Enable CORS for all routes and allow requests from http://localhost:3000
-CORS(app, resources={r"/api/*": {"origins": "http://localhost:3000"}})
+CORS(app, resources={r"/api/*": {"origins": ["http://localhost:3000", "http://127.0.0.1:3000"]}})
 
 app.config['CORS_HEADERS'] = 'Content-Type'
 
