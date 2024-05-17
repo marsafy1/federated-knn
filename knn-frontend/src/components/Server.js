@@ -1,6 +1,4 @@
-import { height } from '@mui/system';
 import React from 'react';
-import DangerousIcon from '@mui/icons-material/Dangerous';
 import Poison from '../assets/poison.png'
 import Valid from '../assets/valid.png'
 import Spam from '../assets/spam_1.png'

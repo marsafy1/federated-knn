@@ -4,34 +4,27 @@ import axios from 'axios';
 import './App.css';
 
 // components folder
-import Navbar from './components/Navbar';
 import SearchField from './components/SearchField';
 import Node from './components/Node';
 import Server from './components/Server';
 import LocalClassification from './assets/phone_classification.mp4'
+
 // simple mui components
-// import TextField from '@mui/material/TextField';
 import ImportExportIcon from '@mui/icons-material/ImportExport';
-import Button from '@mui/material/Button';
 import LoadingButton from '@mui/lab/LoadingButton';
 import Waiting from './assets/waiting.png'
-import FormControl from '@mui/material/FormControl';
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import Select from '@mui/material/Select';
-import Box from '@mui/material/Box';
 import Chip from '@mui/material/Chip';
 import Stack from '@mui/material/Stack';
 
 function App() {
-  const [inputText, setInputText] = useState("");
-  const [loading, setLoading] = useState(false);
-
+  const aggTechs = ['Average', 'Medium', 'Sum', 'Random'];
   const loadingIconsCount = 8;
   const loadingIcons = Array.from({ length: loadingIconsCount }, (_, index) => index + 1); // Create an array [1, 2, 3, 4, 5]
 
+  const [inputText, setInputText] = useState("");
+  const [loading, setLoading] = useState(false);
   const [noInputAtAll, setNoInputAtAll] = useState(true);
-
+  const [aggTech, setAggTech] = React.useState(aggTechs[0]);
   const [data, setData] = useState({
     'payload': {
         'server': {
@@ -47,19 +40,11 @@ function App() {
     'status': 'success'
 })
 
-  const aggTechs = ['Average', 'Medium', 'Sum', 'Random'];
-  const [aggTech, setAggTech] = React.useState(aggTechs[0]);
-
-  const handleChange = (event) => {
-    console.log(event);
-    // alert(event.target.value)
-    setAggTech(event.target.value);
-  };
-
+  
   const submitText=()=>{
-    // alert("hi "+inputText);
     classifyInputRequest();
   }
+
   const classifyInputRequest = async () => {
     setLoading(true);
     setNoInputAtAll(false);
@@ -71,7 +56,6 @@ function App() {
         });
         await new Promise(r => setTimeout(r, 1500));
         setData(response.data);
-        console.log(response)
     } catch (error) {
         console.log(error);
     } finally {
@@ -80,27 +64,8 @@ function App() {
 };
   return (
     <div className="App">
-      {/* <Navbar/> */}
       <div className="content">
         <div className='content_input_container'>
-          {/* <form> */}
-          {/* <Box sx={{ minWidth: 120, color:'red'}}>
-              <FormControl fullWidth sx={{height:100, color:'red'}}>
-                <InputLabel id="demo-simple-select-label">Age</InputLabel>
-                <Select
-                  labelId="demo-simple-select-label"
-                  id="demo-simple-select"
-                  value={aggTech}
-                  label="Age"
-                  onChange={handleChange}
-                  sx={{height: 50, color:'red'}}
-                >
-                  <MenuItem value={10}>Ten</MenuItem>
-                  <MenuItem value={20}>Twenty</MenuItem>
-                  <MenuItem value={30}>Thirty</MenuItem>
-                </Select>
-              </FormControl>
-            </Box> */}
             <div className="content_input">
               <SearchField submitText={submitText} inputText={inputText} setInputText={setInputText}/>
               <LoadingButton loading={loading} variant="contained" sx={{ marginLeft:'10px', background:'var(--primary)', fontWeight:'bolder', color:'var(--primary-bg)', height:'50px' }} onClick={submitText}>{loading? 'Classify':'Classify'}</LoadingButton>
@@ -111,7 +76,7 @@ function App() {
                   <Chip
                     key={tech}
                     sx={{ fontWeight: 'bold' }}
-                    label={`${tech} Filled`}
+                    label={`${tech}`}
                     color="primary"
                     variant={aggTech === tech ? 'contained' : 'outlined'}
                     onClick={() => setAggTech(tech)}
@@ -119,9 +84,6 @@ function App() {
                 ))}
               </Stack>
             </div>
-
-
-          {/* </form> */}
         </div>
         {!noInputAtAll && <div className="content_visuals">
           <div className="server_content">

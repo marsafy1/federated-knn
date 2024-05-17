@@ -2,18 +2,10 @@ import axios from 'axios';
 import { motion } from 'framer-motion';
 import Paper from '@mui/material/Paper';
 import InputBase from '@mui/material/InputBase';
-import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
-import SearchIcon from '@mui/icons-material/Search';
-import DirectionsIcon from '@mui/icons-material/Directions';
-import BedtimeIcon from '@mui/icons-material/Bedtime';
-import CatchingPokemonIcon from '@mui/icons-material/CatchingPokemon';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-import CasinoIcon from '@mui/icons-material/Casino';
 import ShuffleIcon from '@mui/icons-material/Shuffle';
 import Tooltip from '@mui/material/Tooltip';
-import Button from '@mui/material/Button';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 
 export default function SearchField({submitText, inputText, setInputText}) {
@@ -90,12 +82,6 @@ export default function SearchField({submitText, inputText, setInputText}) {
           <ShuffleIcon />
         </IconButton>
       </Tooltip>
-      {/* <Divider sx={{ height: 28, m: 0.5, background:'var(--primary)'}} orientation="vertical" /> */}
-      {/* <Tooltip title="Classify Input">
-        <IconButton  sx={{ p: '10px', color:'var(--primary)' }} aria-label="directions" onClick={submitText}>
-          <SearchIcon />
-        </IconButton>
-      </Tooltip> */}
     </Paper>
     
   );
