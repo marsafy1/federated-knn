@@ -90,12 +90,12 @@ export default function SearchField({submitText, inputText, setInputText}) {
           <ShuffleIcon />
         </IconButton>
       </Tooltip>
-      <Divider sx={{ height: 28, m: 0.5, background:'var(--primary)'}} orientation="vertical" />
-      <Tooltip title="Classify Input">
+      {/* <Divider sx={{ height: 28, m: 0.5, background:'var(--primary)'}} orientation="vertical" /> */}
+      {/* <Tooltip title="Classify Input">
         <IconButton  sx={{ p: '10px', color:'var(--primary)' }} aria-label="directions" onClick={submitText}>
           <SearchIcon />
         </IconButton>
-      </Tooltip>
+      </Tooltip> */}
     </Paper>
     
   );
