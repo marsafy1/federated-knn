@@ -9,7 +9,9 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 
 app = Flask(__name__)
-CORS(app)
+# Enable CORS for all routes and allow requests from http://localhost:3000
+CORS(app, resources={r"/api/*": {"origins": "http://localhost:3000"}})
+
 app.config['CORS_HEADERS'] = 'Content-Type'
 
 # Load the CSV file
