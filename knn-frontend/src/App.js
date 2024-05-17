@@ -71,6 +71,9 @@ function App() {
               <LoadingButton loading={loading} variant="contained" sx={{ marginLeft:'10px', background:'var(--primary)', fontWeight:'bolder', color:'var(--primary-bg)', height:'50px' }} onClick={submitText}>{loading? 'Classify':'Classify'}</LoadingButton>
             </div>
             <div className='options_row'>
+              <div style={{marginRight:'10px', display:'flex', justifyContent:'center', alignItems:'center'}}>
+                <h4 style={{color:'var(--primary)'}}>Aggregation</h4>
+              </div>
               <Stack direction="row" spacing={1}>
               {aggTechs.map((tech) => (
                   <Chip

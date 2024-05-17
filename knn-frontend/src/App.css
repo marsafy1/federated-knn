@@ -295,4 +295,7 @@
   display: flex;
   height: 35px;
   margin-top: 10px;
+  
+  display: flex;
+  align-items: center;
 }
