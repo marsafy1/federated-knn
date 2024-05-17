@@ -1,6 +1,10 @@
 #!/bin/sh
-source env/bin/activate &
-cd ./main
-python3 flask_server.py &
-cd ../knn-frontend
-npm start
+
+# Activate the virtual environment
+source env/bin/activate
+
+# Start the Flask server
+(cd main && python3 flask_server.py) &
+
+# Navigate to the React app directory and start the npm server
+(cd knn-frontend && npm start)

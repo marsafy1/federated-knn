@@ -1,418 +1,248 @@
 Server up and running...
 {'client_0': False, 'client_1': False, 'client_2': False}
-input@user: Subject: re : encrypted mail for more details see the attachment . attachment : no virus found bitdefender antivirus - www . bitdefender . com
-client_task@server: Subject: re : encrypted mail for more details see the attachment . attachment : no virus found bitdefender antivirus - www . bitdefender . com
-client_task@server: Subject: re : encrypted mail for more details see the attachment . attachment : no virus found bitdefender antivirus - www . bitdefender . com
+input@user: Wat would u like 4 ur birthday?
+client_task@server: Wat would u like 4 ur birthday?
+client_task@server: Wat would u like 4 ur birthday?
+classification@client_1: 0,0.6666666666666666,0.3333333333333333
+classification@client_2: 1,0.3333333333333333,0.6666666666666666
+classification@client_0: 1,0.3333333333333333,0.6666666666666666
+All Received -> Start aggregation
+Handling aggregation...
+{'client_0': '1,0.3333333333333333,0.6666666666666666', 'client_1': '0,0.6666666666666666,0.3333333333333333', 'client_2': '1,0.3333333333333333,0.6666666666666666'}
+Key: most_common , Aggregation result: 1
+Handling aggregation...
+{'client_0': '1,0.3333333333333333,0.6666666666666666', 'client_1': '0,0.6666666666666666,0.3333333333333333', 'client_2': '1,0.3333333333333333,0.6666666666666666'}
+Key: weighted , Aggregation result: 1
+Handling aggregation...
+{'client_0': '1,0.3333333333333333,0.6666666666666666', 'client_1': '0,0.6666666666666666,0.3333333333333333', 'client_2': '1,0.3333333333333333,0.6666666666666666'}
+Key: average_probabilities , Aggregation result: 1
+Handling aggregation...
+{'client_0': '1,0.3333333333333333,0.6666666666666666', 'client_1': '0,0.6666666666666666,0.3333333333333333', 'client_2': '1,0.3333333333333333,0.6666666666666666'}
+Key: bayesian , Aggregation result: 1
+classification@client_0: 1,0.3333333333333333,0.6666666666666666
+classification@client_2: 1,0.0,1.0
+classification@client_1: 1,0.3333333333333333,0.6666666666666666
+All Received -> Start aggregation
+Handling aggregation...
+{'client_0': '1,0.3333333333333333,0.6666666666666666', 'client_1': '1,0.3333333333333333,0.6666666666666666', 'client_2': '1,0.0,1.0'}
+Key: most_common , Aggregation result: 1
+Handling aggregation...
+{'client_0': '1,0.3333333333333333,0.6666666666666666', 'client_1': '1,0.3333333333333333,0.6666666666666666', 'client_2': '1,0.0,1.0'}
+Key: weighted , Aggregation result: 1
+Handling aggregation...
+{'client_0': '1,0.3333333333333333,0.6666666666666666', 'client_1': '1,0.3333333333333333,0.6666666666666666', 'client_2': '1,0.0,1.0'}
+Key: average_probabilities , Aggregation result: 1
+Handling aggregation...
+{'client_0': '1,0.3333333333333333,0.6666666666666666', 'client_1': '1,0.3333333333333333,0.6666666666666666', 'client_2': '1,0.0,1.0'}
+Key: bayesian , Aggregation result: 1
+classification@client_1: 0,0.6666666666666666,0.3333333333333333
+user_response@server: 1
+user_response@server: 1
+classification@client_2: 1,0.3333333333333333,0.6666666666666666
+classification@client_0: 1,0.3333333333333333,0.6666666666666666
+All Received -> Start aggregation
+Handling aggregation...
+{'client_0': '1,0.3333333333333333,0.6666666666666666', 'client_1': '0,0.6666666666666666,0.3333333333333333', 'client_2': '1,0.3333333333333333,0.6666666666666666'}
+Key: most_common , Aggregation result: 1
+Handling aggregation...
+{'client_0': '1,0.3333333333333333,0.6666666666666666', 'client_1': '0,0.6666666666666666,0.3333333333333333', 'client_2': '1,0.3333333333333333,0.6666666666666666'}
+Key: weighted , Aggregation result: 1
+Handling aggregation...
+{'client_0': '1,0.3333333333333333,0.6666666666666666', 'client_1': '0,0.6666666666666666,0.3333333333333333', 'client_2': '1,0.3333333333333333,0.6666666666666666'}
+Key: average_probabilities , Aggregation result: 1
+Handling aggregation...
+{'client_0': '1,0.3333333333333333,0.6666666666666666', 'client_1': '0,0.6666666666666666,0.3333333333333333', 'client_2': '1,0.3333333333333333,0.6666666666666666'}
+Key: bayesian , Aggregation result: 1
+classification@client_0: 1,0.3333333333333333,0.6666666666666666
+classification@client_2: 1,0.0,1.0
+classification@client_1: 1,0.3333333333333333,0.6666666666666666
+All Received -> Start aggregation
+Handling aggregation...
+{'client_0': '1,0.3333333333333333,0.6666666666666666', 'client_1': '1,0.3333333333333333,0.6666666666666666', 'client_2': '1,0.0,1.0'}
+Key: most_common , Aggregation result: 1
+Handling aggregation...
+{'client_0': '1,0.3333333333333333,0.6666666666666666', 'client_1': '1,0.3333333333333333,0.6666666666666666', 'client_2': '1,0.0,1.0'}
+Key: weighted , Aggregation result: 1
+Handling aggregation...
+{'client_0': '1,0.3333333333333333,0.6666666666666666', 'client_1': '1,0.3333333333333333,0.6666666666666666', 'client_2': '1,0.0,1.0'}
+Key: average_probabilities , Aggregation result: 1
+Handling aggregation...
+{'client_0': '1,0.3333333333333333,0.6666666666666666', 'client_1': '1,0.3333333333333333,0.6666666666666666', 'client_2': '1,0.0,1.0'}
+Key: bayesian , Aggregation result: 1
+input@user: Wat would u like 4 ur birthday?
+user_response@server: 1
+user_response@server: 1
+user_response@server: 1
+user_response@server: 1
+user_response@server: 1
+user_response@server: 1
+client_task@server: Wat would u like 4 ur birthday?
+client_task@server: Wat would u like 4 ur birthday?
+classification@client_1: 1,0.3333333333333333,0.6666666666666666
+classification@client_2: 1,0.3333333333333333,0.6666666666666666
+classification@client_0: 1,0.3333333333333333,0.6666666666666666
+All Received -> Start aggregation
+Handling aggregation...
+{'client_0': '1,0.3333333333333333,0.6666666666666666', 'client_1': '1,0.3333333333333333,0.6666666666666666', 'client_2': '1,0.3333333333333333,0.6666666666666666'}
+Key: most_common , Aggregation result: 1
+Handling aggregation...
+{'client_0': '1,0.3333333333333333,0.6666666666666666', 'client_1': '1,0.3333333333333333,0.6666666666666666', 'client_2': '1,0.3333333333333333,0.6666666666666666'}
+Key: weighted , Aggregation result: 1
+Handling aggregation...
+{'client_0': '1,0.3333333333333333,0.6666666666666666', 'client_1': '1,0.3333333333333333,0.6666666666666666', 'client_2': '1,0.3333333333333333,0.6666666666666666'}
+Key: average_probabilities , Aggregation result: 1
+Handling aggregation...
+{'client_0': '1,0.3333333333333333,0.6666666666666666', 'client_1': '1,0.3333333333333333,0.6666666666666666', 'client_2': '1,0.3333333333333333,0.6666666666666666'}
+Key: bayesian , Aggregation result: 1
 classification@client_0: 1,0.3333333333333333,0.6666666666666666
 classification@client_1: 0,0.6666666666666666,0.3333333333333333
-classification@client_0: 1,0.3333333333333333,0.6666666666666666
-classification@client_1: 1,0.3333333333333333,0.6666666666666666
-classification@client_2: 0,1.0,0.0
+classification@client_2: 1,0.0,1.0
 All Received -> Start aggregation
 Handling aggregation...
-{'client_0': '1,0.3333333333333333,0.6666666666666666', 'client_1': '1,0.3333333333333333,0.6666666666666666', 'client_2': '0,1.0,0.0'}
+{'client_0': '1,0.3333333333333333,0.6666666666666666', 'client_1': '0,0.6666666666666666,0.3333333333333333', 'client_2': '1,0.0,1.0'}
 Key: most_common , Aggregation result: 1
 Handling aggregation...
-{'client_0': '1,0.3333333333333333,0.6666666666666666', 'client_1': '1,0.3333333333333333,0.6666666666666666', 'client_2': '0,1.0,0.0'}
+{'client_0': '1,0.3333333333333333,0.6666666666666666', 'client_1': '0,0.6666666666666666,0.3333333333333333', 'client_2': '1,0.0,1.0'}
 Key: weighted , Aggregation result: 1
 Handling aggregation...
-{'client_0': '1,0.3333333333333333,0.6666666666666666', 'client_1': '1,0.3333333333333333,0.6666666666666666', 'client_2': '0,1.0,0.0'}
-Key: average_probabilities , Aggregation result: 0
+{'client_0': '1,0.3333333333333333,0.6666666666666666', 'client_1': '0,0.6666666666666666,0.3333333333333333', 'client_2': '1,0.0,1.0'}
+Key: average_probabilities , Aggregation result: 1
 Handling aggregation...
-{'client_0': '1,0.3333333333333333,0.6666666666666666', 'client_1': '1,0.3333333333333333,0.6666666666666666', 'client_2': '0,1.0,0.0'}
-Key: bayesian , Aggregation result: 0
-classification@client_2: 0,1.0,0.0
+{'client_0': '1,0.3333333333333333,0.6666666666666666', 'client_1': '0,0.6666666666666666,0.3333333333333333', 'client_2': '1,0.0,1.0'}
+Key: bayesian , Aggregation result: 1
+classification@client_2: 1,0.3333333333333333,0.6666666666666666
+user_response@server: 1
+classification@client_1: 1,0.3333333333333333,0.6666666666666666
+user_response@server: 1
 classification@client_0: 1,0.3333333333333333,0.6666666666666666
-user_response@server: 1
-user_response@server: 1
+All Received -> Start aggregation
+Handling aggregation...
+{'client_0': '1,0.3333333333333333,0.6666666666666666', 'client_1': '1,0.3333333333333333,0.6666666666666666', 'client_2': '1,0.3333333333333333,0.6666666666666666'}
+Key: most_common , Aggregation result: 1
+Handling aggregation...
+{'client_0': '1,0.3333333333333333,0.6666666666666666', 'client_1': '1,0.3333333333333333,0.6666666666666666', 'client_2': '1,0.3333333333333333,0.6666666666666666'}
+Key: weighted , Aggregation result: 1
+Handling aggregation...
+{'client_0': '1,0.3333333333333333,0.6666666666666666', 'client_1': '1,0.3333333333333333,0.6666666666666666', 'client_2': '1,0.3333333333333333,0.6666666666666666'}
+Key: average_probabilities , Aggregation result: 1
+Handling aggregation...
+{'client_0': '1,0.3333333333333333,0.6666666666666666', 'client_1': '1,0.3333333333333333,0.6666666666666666', 'client_2': '1,0.3333333333333333,0.6666666666666666'}
+Key: bayesian , Aggregation result: 1
 classification@client_0: 1,0.3333333333333333,0.6666666666666666
 classification@client_1: 0,0.6666666666666666,0.3333333333333333
+classification@client_2: 1,0.0,1.0
 All Received -> Start aggregation
 Handling aggregation...
-{'client_0': '1,0.3333333333333333,0.6666666666666666', 'client_1': '0,0.6666666666666666,0.3333333333333333', 'client_2': '0,1.0,0.0'}
-Key: most_common , Aggregation result: 0
-Handling aggregation...
-{'client_0': '1,0.3333333333333333,0.6666666666666666', 'client_1': '0,0.6666666666666666,0.3333333333333333', 'client_2': '0,1.0,0.0'}
-Key: weighted , Aggregation result: 0
-Handling aggregation...
-{'client_0': '1,0.3333333333333333,0.6666666666666666', 'client_1': '0,0.6666666666666666,0.3333333333333333', 'client_2': '0,1.0,0.0'}
-Key: average_probabilities , Aggregation result: 0
-Handling aggregation...
-{'client_0': '1,0.3333333333333333,0.6666666666666666', 'client_1': '0,0.6666666666666666,0.3333333333333333', 'client_2': '0,1.0,0.0'}
-Key: bayesian , Aggregation result: 0
-classification@client_1: 1,0.3333333333333333,0.6666666666666666
-classification@client_2: 0,1.0,0.0
-classification@client_2: 0,1.0,0.0
-input@user: Subject: re : encrypted mail for more details see the attachment . attachment : no virus found bitdefender antivirus - www . bitdefender . com
-user_response@server: 0
-user_response@server: 0
-client_task@server: Subject: re : encrypted mail for more details see the attachment . attachment : no virus found bitdefender antivirus - www . bitdefender . com
-client_task@server: Subject: re : encrypted mail for more details see the attachment . attachment : no virus found bitdefender antivirus - www . bitdefender . com
-classification@client_2: 0,1.0,0.0
-classification@client_1: 1,0.3333333333333333,0.6666666666666666
-classification@client_0: 1,0.3333333333333333,0.6666666666666666
-All Received -> Start aggregation
-Handling aggregation...
-{'client_0': '1,0.3333333333333333,0.6666666666666666', 'client_1': '1,0.3333333333333333,0.6666666666666666', 'client_2': '0,1.0,0.0'}
+{'client_0': '1,0.3333333333333333,0.6666666666666666', 'client_1': '0,0.6666666666666666,0.3333333333333333', 'client_2': '1,0.0,1.0'}
 Key: most_common , Aggregation result: 1
 Handling aggregation...
-{'client_0': '1,0.3333333333333333,0.6666666666666666', 'client_1': '1,0.3333333333333333,0.6666666666666666', 'client_2': '0,1.0,0.0'}
+{'client_0': '1,0.3333333333333333,0.6666666666666666', 'client_1': '0,0.6666666666666666,0.3333333333333333', 'client_2': '1,0.0,1.0'}
 Key: weighted , Aggregation result: 1
 Handling aggregation...
-{'client_0': '1,0.3333333333333333,0.6666666666666666', 'client_1': '1,0.3333333333333333,0.6666666666666666', 'client_2': '0,1.0,0.0'}
+{'client_0': '1,0.3333333333333333,0.6666666666666666', 'client_1': '0,0.6666666666666666,0.3333333333333333', 'client_2': '1,0.0,1.0'}
+Key: average_probabilities , Aggregation result: 1
+Handling aggregation...
+{'client_0': '1,0.3333333333333333,0.6666666666666666', 'client_1': '0,0.6666666666666666,0.3333333333333333', 'client_2': '1,0.0,1.0'}
+Key: bayesian , Aggregation result: 1
+user_response@server: 1
+user_response@server: 1
+user_response@server: 1
+user_response@server: 1
+user_response@server: 1
+user_response@server: 1
+input@user: Had your contract mobile 11 Mnths? Latest Motorola, Nokia etc. all FREE! Double Mins 
+input@user: Had your contract mobile 11 Mnths? Latest Motorola, Nokia etc. all FREE! Double Mins 
+client_task@server: Had your contract mobile 11 Mnths? Latest Motorola, Nokia etc. all FREE! Double Mins 
+client_task@server: Had your contract mobile 11 Mnths? Latest Motorola, Nokia etc. all FREE! Double Mins 
+classification@client_0: 1,0.3333333333333333,0.6666666666666666
+client_task@server: Had your contract mobile 11 Mnths? Latest Motorola, Nokia etc. all FREE! Double Mins 
+classification@client_0: 0,0.6666666666666666,0.3333333333333333
+client_task@server: Had your contract mobile 11 Mnths? Latest Motorola, Nokia etc. all FREE! Double Mins 
+classification@client_2: 0,0.6666666666666666,0.3333333333333333
+classification@client_1: 1,0.3333333333333333,0.6666666666666666
+All Received -> Start aggregation
+Handling aggregation...
+{'client_0': '0,0.6666666666666666,0.3333333333333333', 'client_1': '1,0.3333333333333333,0.6666666666666666', 'client_2': '0,0.6666666666666666,0.3333333333333333'}
+Key: most_common , Aggregation result: 0
+Handling aggregation...
+{'client_0': '0,0.6666666666666666,0.3333333333333333', 'client_1': '1,0.3333333333333333,0.6666666666666666', 'client_2': '0,0.6666666666666666,0.3333333333333333'}
+Key: weighted , Aggregation result: 0
+Handling aggregation...
+{'client_0': '0,0.6666666666666666,0.3333333333333333', 'client_1': '1,0.3333333333333333,0.6666666666666666', 'client_2': '0,0.6666666666666666,0.3333333333333333'}
 Key: average_probabilities , Aggregation result: 0
 Handling aggregation...
-{'client_0': '1,0.3333333333333333,0.6666666666666666', 'client_1': '1,0.3333333333333333,0.6666666666666666', 'client_2': '0,1.0,0.0'}
+{'client_0': '0,0.6666666666666666,0.3333333333333333', 'client_1': '1,0.3333333333333333,0.6666666666666666', 'client_2': '0,0.6666666666666666,0.3333333333333333'}
 Key: bayesian , Aggregation result: 0
+classification@client_2: 0,0.6666666666666666,0.3333333333333333
 classification@client_1: 0,0.6666666666666666,0.3333333333333333
 classification@client_0: 1,0.3333333333333333,0.6666666666666666
-classification@client_2: 0,1.0,0.0
 All Received -> Start aggregation
 Handling aggregation...
-{'client_0': '1,0.3333333333333333,0.6666666666666666', 'client_1': '0,0.6666666666666666,0.3333333333333333', 'client_2': '0,1.0,0.0'}
+{'client_0': '1,0.3333333333333333,0.6666666666666666', 'client_1': '0,0.6666666666666666,0.3333333333333333', 'client_2': '0,0.6666666666666666,0.3333333333333333'}
 Key: most_common , Aggregation result: 0
 Handling aggregation...
-{'client_0': '1,0.3333333333333333,0.6666666666666666', 'client_1': '0,0.6666666666666666,0.3333333333333333', 'client_2': '0,1.0,0.0'}
+{'client_0': '1,0.3333333333333333,0.6666666666666666', 'client_1': '0,0.6666666666666666,0.3333333333333333', 'client_2': '0,0.6666666666666666,0.3333333333333333'}
 Key: weighted , Aggregation result: 0
 Handling aggregation...
-{'client_0': '1,0.3333333333333333,0.6666666666666666', 'client_1': '0,0.6666666666666666,0.3333333333333333', 'client_2': '0,1.0,0.0'}
+{'client_0': '1,0.3333333333333333,0.6666666666666666', 'client_1': '0,0.6666666666666666,0.3333333333333333', 'client_2': '0,0.6666666666666666,0.3333333333333333'}
 Key: average_probabilities , Aggregation result: 0
 Handling aggregation...
-{'client_0': '1,0.3333333333333333,0.6666666666666666', 'client_1': '0,0.6666666666666666,0.3333333333333333', 'client_2': '0,1.0,0.0'}
+{'client_0': '1,0.3333333333333333,0.6666666666666666', 'client_1': '0,0.6666666666666666,0.3333333333333333', 'client_2': '0,0.6666666666666666,0.3333333333333333'}
 Key: bayesian , Aggregation result: 0
 classification@client_1: 1,0.3333333333333333,0.6666666666666666
-classification@client_2: 0,1.0,0.0
-user_response@server: 1
-classification@client_0: 1,0.3333333333333333,0.6666666666666666
+classification@client_0: 0,0.6666666666666666,0.3333333333333333
+user_response@server: 0
+user_response@server: 0
+classification@client_2: 0,0.6666666666666666,0.3333333333333333
 All Received -> Start aggregation
 Handling aggregation...
-{'client_0': '1,0.3333333333333333,0.6666666666666666', 'client_1': '1,0.3333333333333333,0.6666666666666666', 'client_2': '0,1.0,0.0'}
-Key: most_common , Aggregation result: 1
+{'client_0': '0,0.6666666666666666,0.3333333333333333', 'client_1': '1,0.3333333333333333,0.6666666666666666', 'client_2': '0,0.6666666666666666,0.3333333333333333'}
+Key: most_common , Aggregation result: 0
 Handling aggregation...
-{'client_0': '1,0.3333333333333333,0.6666666666666666', 'client_1': '1,0.3333333333333333,0.6666666666666666', 'client_2': '0,1.0,0.0'}
-Key: weighted , Aggregation result: 1
+{'client_0': '0,0.6666666666666666,0.3333333333333333', 'client_1': '1,0.3333333333333333,0.6666666666666666', 'client_2': '0,0.6666666666666666,0.3333333333333333'}
+Key: weighted , Aggregation result: 0
 Handling aggregation...
-{'client_0': '1,0.3333333333333333,0.6666666666666666', 'client_1': '1,0.3333333333333333,0.6666666666666666', 'client_2': '0,1.0,0.0'}
+{'client_0': '0,0.6666666666666666,0.3333333333333333', 'client_1': '1,0.3333333333333333,0.6666666666666666', 'client_2': '0,0.6666666666666666,0.3333333333333333'}
 Key: average_probabilities , Aggregation result: 0
 Handling aggregation...
-{'client_0': '1,0.3333333333333333,0.6666666666666666', 'client_1': '1,0.3333333333333333,0.6666666666666666', 'client_2': '0,1.0,0.0'}
+{'client_0': '0,0.6666666666666666,0.3333333333333333', 'client_1': '1,0.3333333333333333,0.6666666666666666', 'client_2': '0,0.6666666666666666,0.3333333333333333'}
 Key: bayesian , Aggregation result: 0
-user_response@server: 1
-classification@client_0: 1,0.3333333333333333,0.6666666666666666
+classification@client_2: 0,0.6666666666666666,0.3333333333333333
 classification@client_1: 0,0.6666666666666666,0.3333333333333333
-classification@client_2: 0,1.0,0.0
+classification@client_0: 1,0.3333333333333333,0.6666666666666666
 All Received -> Start aggregation
 Handling aggregation...
-{'client_0': '1,0.3333333333333333,0.6666666666666666', 'client_1': '0,0.6666666666666666,0.3333333333333333', 'client_2': '0,1.0,0.0'}
+{'client_0': '1,0.3333333333333333,0.6666666666666666', 'client_1': '0,0.6666666666666666,0.3333333333333333', 'client_2': '0,0.6666666666666666,0.3333333333333333'}
 Key: most_common , Aggregation result: 0
 Handling aggregation...
-{'client_0': '1,0.3333333333333333,0.6666666666666666', 'client_1': '0,0.6666666666666666,0.3333333333333333', 'client_2': '0,1.0,0.0'}
+{'client_0': '1,0.3333333333333333,0.6666666666666666', 'client_1': '0,0.6666666666666666,0.3333333333333333', 'client_2': '0,0.6666666666666666,0.3333333333333333'}
 Key: weighted , Aggregation result: 0
 Handling aggregation...
-{'client_0': '1,0.3333333333333333,0.6666666666666666', 'client_1': '0,0.6666666666666666,0.3333333333333333', 'client_2': '0,1.0,0.0'}
+{'client_0': '1,0.3333333333333333,0.6666666666666666', 'client_1': '0,0.6666666666666666,0.3333333333333333', 'client_2': '0,0.6666666666666666,0.3333333333333333'}
 Key: average_probabilities , Aggregation result: 0
 Handling aggregation...
-{'client_0': '1,0.3333333333333333,0.6666666666666666', 'client_1': '0,0.6666666666666666,0.3333333333333333', 'client_2': '0,1.0,0.0'}
+{'client_0': '1,0.3333333333333333,0.6666666666666666', 'client_1': '0,0.6666666666666666,0.3333333333333333', 'client_2': '0,0.6666666666666666,0.3333333333333333'}
 Key: bayesian , Aggregation result: 0
 user_response@server: 0
 user_response@server: 0
-user_response@server: 1
-user_response@server: 1
-user_response@server: 0
-user_response@server: 0
-input@user: this is a test
-client_task@server: this is a test
-client_task@server: this is a test
-input@user: this is a test
-client_task@server: this is a test
-classification@client_1: 1,0.3333333333333333,0.6666666666666666
-client_task@server: this is a test
 classification@client_1: 1,0.3333333333333333,0.6666666666666666
 classification@client_0: 0,0.6666666666666666,0.3333333333333333
-classification@client_2: 1,0.3333333333333333,0.6666666666666666
+classification@client_2: 0,0.6666666666666666,0.3333333333333333
 All Received -> Start aggregation
 Handling aggregation...
-{'client_0': '0,0.6666666666666666,0.3333333333333333', 'client_1': '1,0.3333333333333333,0.6666666666666666', 'client_2': '1,0.3333333333333333,0.6666666666666666'}
-Key: most_common , Aggregation result: 1
-Handling aggregation...
-{'client_0': '0,0.6666666666666666,0.3333333333333333', 'client_1': '1,0.3333333333333333,0.6666666666666666', 'client_2': '1,0.3333333333333333,0.6666666666666666'}
-Key: weighted , Aggregation result: 1
-Handling aggregation...
-{'client_0': '0,0.6666666666666666,0.3333333333333333', 'client_1': '1,0.3333333333333333,0.6666666666666666', 'client_2': '1,0.3333333333333333,0.6666666666666666'}
-Key: average_probabilities , Aggregation result: 1
-Handling aggregation...
-{'client_0': '0,0.6666666666666666,0.3333333333333333', 'client_1': '1,0.3333333333333333,0.6666666666666666', 'client_2': '1,0.3333333333333333,0.6666666666666666'}
-Key: bayesian , Aggregation result: 1
-classification@client_0: 1,0.3333333333333333,0.6666666666666666
-classification@client_2: 1,0.3333333333333333,0.6666666666666666
-user_response@server: 1
-classification@client_0: 0,0.6666666666666666,0.3333333333333333
-user_response@server: 1
-classification@client_2: 1,0.3333333333333333,0.6666666666666666
-classification@client_0: 1,0.3333333333333333,0.6666666666666666
-classification@client_1: 1,0.3333333333333333,0.6666666666666666
-All Received -> Start aggregation
-Handling aggregation...
-{'client_0': '1,0.3333333333333333,0.6666666666666666', 'client_1': '1,0.3333333333333333,0.6666666666666666', 'client_2': '1,0.3333333333333333,0.6666666666666666'}
-Key: most_common , Aggregation result: 1
-Handling aggregation...
-{'client_0': '1,0.3333333333333333,0.6666666666666666', 'client_1': '1,0.3333333333333333,0.6666666666666666', 'client_2': '1,0.3333333333333333,0.6666666666666666'}
-Key: weighted , Aggregation result: 1
-Handling aggregation...
-{'client_0': '1,0.3333333333333333,0.6666666666666666', 'client_1': '1,0.3333333333333333,0.6666666666666666', 'client_2': '1,0.3333333333333333,0.6666666666666666'}
-Key: average_probabilities , Aggregation result: 1
-Handling aggregation...
-{'client_0': '1,0.3333333333333333,0.6666666666666666', 'client_1': '1,0.3333333333333333,0.6666666666666666', 'client_2': '1,0.3333333333333333,0.6666666666666666'}
-Key: bayesian , Aggregation result: 1
-classification@client_1: 1,0.3333333333333333,0.6666666666666666
-classification@client_2: 1,0.3333333333333333,0.6666666666666666
-user_response@server: 1
-classification@client_0: 0,0.6666666666666666,0.3333333333333333
-All Received -> Start aggregation
-Handling aggregation...
-{'client_0': '0,0.6666666666666666,0.3333333333333333', 'client_1': '1,0.3333333333333333,0.6666666666666666', 'client_2': '1,0.3333333333333333,0.6666666666666666'}
-Key: most_common , Aggregation result: 1
-Handling aggregation...
-{'client_0': '0,0.6666666666666666,0.3333333333333333', 'client_1': '1,0.3333333333333333,0.6666666666666666', 'client_2': '1,0.3333333333333333,0.6666666666666666'}
-Key: weighted , Aggregation result: 1
-Handling aggregation...
-{'client_0': '0,0.6666666666666666,0.3333333333333333', 'client_1': '1,0.3333333333333333,0.6666666666666666', 'client_2': '1,0.3333333333333333,0.6666666666666666'}
-Key: average_probabilities , Aggregation result: 1
-Handling aggregation...
-{'client_0': '0,0.6666666666666666,0.3333333333333333', 'client_1': '1,0.3333333333333333,0.6666666666666666', 'client_2': '1,0.3333333333333333,0.6666666666666666'}
-Key: bayesian , Aggregation result: 1
-user_response@server: 1
-classification@client_1: 1,0.3333333333333333,0.6666666666666666
-classification@client_1: 1,0.3333333333333333,0.6666666666666666
-classification@client_0: 1,0.3333333333333333,0.6666666666666666
-classification@client_2: 1,0.3333333333333333,0.6666666666666666
-All Received -> Start aggregation
-Handling aggregation...
-{'client_0': '1,0.3333333333333333,0.6666666666666666', 'client_1': '1,0.3333333333333333,0.6666666666666666', 'client_2': '1,0.3333333333333333,0.6666666666666666'}
-Key: most_common , Aggregation result: 1
-Handling aggregation...
-{'client_0': '1,0.3333333333333333,0.6666666666666666', 'client_1': '1,0.3333333333333333,0.6666666666666666', 'client_2': '1,0.3333333333333333,0.6666666666666666'}
-Key: weighted , Aggregation result: 1
-Handling aggregation...
-{'client_0': '1,0.3333333333333333,0.6666666666666666', 'client_1': '1,0.3333333333333333,0.6666666666666666', 'client_2': '1,0.3333333333333333,0.6666666666666666'}
-Key: average_probabilities , Aggregation result: 1
-Handling aggregation...
-{'client_0': '1,0.3333333333333333,0.6666666666666666', 'client_1': '1,0.3333333333333333,0.6666666666666666', 'client_2': '1,0.3333333333333333,0.6666666666666666'}
-Key: bayesian , Aggregation result: 1
-classification@client_2: 1,0.3333333333333333,0.6666666666666666
-user_response@server: 1
-user_response@server: 1
-classification@client_0: 0,0.6666666666666666,0.3333333333333333
-classification@client_1: 1,0.3333333333333333,0.6666666666666666
-All Received -> Start aggregation
-Handling aggregation...
-{'client_0': '0,0.6666666666666666,0.3333333333333333', 'client_1': '1,0.3333333333333333,0.6666666666666666', 'client_2': '1,0.3333333333333333,0.6666666666666666'}
-Key: most_common , Aggregation result: 1
-Handling aggregation...
-{'client_0': '0,0.6666666666666666,0.3333333333333333', 'client_1': '1,0.3333333333333333,0.6666666666666666', 'client_2': '1,0.3333333333333333,0.6666666666666666'}
-Key: weighted , Aggregation result: 1
-Handling aggregation...
-{'client_0': '0,0.6666666666666666,0.3333333333333333', 'client_1': '1,0.3333333333333333,0.6666666666666666', 'client_2': '1,0.3333333333333333,0.6666666666666666'}
-Key: average_probabilities , Aggregation result: 1
-Handling aggregation...
-{'client_0': '0,0.6666666666666666,0.3333333333333333', 'client_1': '1,0.3333333333333333,0.6666666666666666', 'client_2': '1,0.3333333333333333,0.6666666666666666'}
-Key: bayesian , Aggregation result: 1
-classification@client_2: 1,0.3333333333333333,0.6666666666666666
-classification@client_1: 1,0.3333333333333333,0.6666666666666666
-classification@client_0: 1,0.3333333333333333,0.6666666666666666
-All Received -> Start aggregation
-Handling aggregation...
-{'client_0': '1,0.3333333333333333,0.6666666666666666', 'client_1': '1,0.3333333333333333,0.6666666666666666', 'client_2': '1,0.3333333333333333,0.6666666666666666'}
-Key: most_common , Aggregation result: 1
-Handling aggregation...
-{'client_0': '1,0.3333333333333333,0.6666666666666666', 'client_1': '1,0.3333333333333333,0.6666666666666666', 'client_2': '1,0.3333333333333333,0.6666666666666666'}
-Key: weighted , Aggregation result: 1
-Handling aggregation...
-{'client_0': '1,0.3333333333333333,0.6666666666666666', 'client_1': '1,0.3333333333333333,0.6666666666666666', 'client_2': '1,0.3333333333333333,0.6666666666666666'}
-Key: average_probabilities , Aggregation result: 1
-Handling aggregation...
-{'client_0': '1,0.3333333333333333,0.6666666666666666', 'client_1': '1,0.3333333333333333,0.6666666666666666', 'client_2': '1,0.3333333333333333,0.6666666666666666'}
-Key: bayesian , Aggregation result: 1
-classification@client_2: 1,0.3333333333333333,0.6666666666666666
-user_response@server: 1
-user_response@server: 1
-user_response@server: 1
-user_response@server: 1
-user_response@server: 1
-user_response@server: 1
-input@user: Hi. Happy New Year. I dont mean to intrude but can you pls let me know how much tuition you paid last semester and how much this semester is. Thanks
-client_task@server: Hi. Happy New Year. I dont mean to intrude but can you pls let me know how much tuition you paid last semester and how much this semester is. Thanks
-client_task@server: Hi. Happy New Year. I dont mean to intrude but can you pls let me know how much tuition you paid last semester and how much this semester is. Thanks
-input@user: Hi. Happy New Year. I dont mean to intrude but can you pls let me know how much tuition you paid last semester and how much this semester is. Thanks
-client_task@server: Hi. Happy New Year. I dont mean to intrude but can you pls let me know how much tuition you paid last semester and how much this semester is. Thanks
-client_task@server: Hi. Happy New Year. I dont mean to intrude but can you pls let me know how much tuition you paid last semester and how much this semester is. Thanks
-classification@client_1: 0,1.0,0.0
-classification@client_0: 0,1.0,0.0
-All Received -> Start aggregation
-Handling aggregation...
-{'client_0': '0,1.0,0.0', 'client_1': '0,1.0,0.0', 'client_2': '1,0.3333333333333333,0.6666666666666666'}
+{'client_0': '0,0.6666666666666666,0.3333333333333333', 'client_1': '1,0.3333333333333333,0.6666666666666666', 'client_2': '0,0.6666666666666666,0.3333333333333333'}
 Key: most_common , Aggregation result: 0
 Handling aggregation...
-{'client_0': '0,1.0,0.0', 'client_1': '0,1.0,0.0', 'client_2': '1,0.3333333333333333,0.6666666666666666'}
+{'client_0': '0,0.6666666666666666,0.3333333333333333', 'client_1': '1,0.3333333333333333,0.6666666666666666', 'client_2': '0,0.6666666666666666,0.3333333333333333'}
 Key: weighted , Aggregation result: 0
 Handling aggregation...
-{'client_0': '0,1.0,0.0', 'client_1': '0,1.0,0.0', 'client_2': '1,0.3333333333333333,0.6666666666666666'}
+{'client_0': '0,0.6666666666666666,0.3333333333333333', 'client_1': '1,0.3333333333333333,0.6666666666666666', 'client_2': '0,0.6666666666666666,0.3333333333333333'}
 Key: average_probabilities , Aggregation result: 0
 Handling aggregation...
-{'client_0': '0,1.0,0.0', 'client_1': '0,1.0,0.0', 'client_2': '1,0.3333333333333333,0.6666666666666666'}
+{'client_0': '0,0.6666666666666666,0.3333333333333333', 'client_1': '1,0.3333333333333333,0.6666666666666666', 'client_2': '0,0.6666666666666666,0.3333333333333333'}
 Key: bayesian , Aggregation result: 0
-classification@client_0: 0,1.0,0.0
-classification@client_1: 0,1.0,0.0
-classification@client_2: 1,0.0,1.0
-All Received -> Start aggregation
-Handling aggregation...
-{'client_0': '0,1.0,0.0', 'client_1': '0,1.0,0.0', 'client_2': '1,0.0,1.0'}
-Key: most_common , Aggregation result: 0
-Handling aggregation...
-{'client_0': '0,1.0,0.0', 'client_1': '0,1.0,0.0', 'client_2': '1,0.0,1.0'}
-Key: weighted , Aggregation result: 0
-Handling aggregation...
-{'client_0': '0,1.0,0.0', 'client_1': '0,1.0,0.0', 'client_2': '1,0.0,1.0'}
-Key: average_probabilities , Aggregation result: 0
-Handling aggregation...
-{'client_0': '0,1.0,0.0', 'client_1': '0,1.0,0.0', 'client_2': '1,0.0,1.0'}
-Key: bayesian , Aggregation result: 1
-classification@client_2: 1,0.0,1.0
-user_response@server: 0
-classification@client_0: 0,1.0,0.0
-user_response@server: 0
-classification@client_1: 0,1.0,0.0
-All Received -> Start aggregation
-Handling aggregation...
-{'client_0': '0,1.0,0.0', 'client_1': '0,1.0,0.0', 'client_2': '1,0.0,1.0'}
-Key: most_common , Aggregation result: 0
-Handling aggregation...
-{'client_0': '0,1.0,0.0', 'client_1': '0,1.0,0.0', 'client_2': '1,0.0,1.0'}
-Key: weighted , Aggregation result: 0
-Handling aggregation...
-{'client_0': '0,1.0,0.0', 'client_1': '0,1.0,0.0', 'client_2': '1,0.0,1.0'}
-Key: average_probabilities , Aggregation result: 0
-Handling aggregation...
-{'client_0': '0,1.0,0.0', 'client_1': '0,1.0,0.0', 'client_2': '1,0.0,1.0'}
-Key: bayesian , Aggregation result: 1
-classification@client_1: 0,1.0,0.0
-classification@client_0: 0,1.0,0.0
-classification@client_2: 1,0.0,1.0
-All Received -> Start aggregation
-Handling aggregation...
-{'client_0': '0,1.0,0.0', 'client_1': '0,1.0,0.0', 'client_2': '1,0.0,1.0'}
-Key: most_common , Aggregation result: 0
-Handling aggregation...
-{'client_0': '0,1.0,0.0', 'client_1': '0,1.0,0.0', 'client_2': '1,0.0,1.0'}
-Key: weighted , Aggregation result: 0
-Handling aggregation...
-{'client_0': '0,1.0,0.0', 'client_1': '0,1.0,0.0', 'client_2': '1,0.0,1.0'}
-Key: average_probabilities , Aggregation result: 0
-Handling aggregation...
-{'client_0': '0,1.0,0.0', 'client_1': '0,1.0,0.0', 'client_2': '1,0.0,1.0'}
-Key: bayesian , Aggregation result: 1
-classification@client_2: 1,0.0,1.0
-user_response@server: 0
-user_response@server: 0
-classification@client_1: 0,1.0,0.0
-classification@client_0: 0,1.0,0.0
-All Received -> Start aggregation
-Handling aggregation...
-{'client_0': '0,1.0,0.0', 'client_1': '0,1.0,0.0', 'client_2': '1,0.0,1.0'}
-Key: most_common , Aggregation result: 0
-Handling aggregation...
-{'client_0': '0,1.0,0.0', 'client_1': '0,1.0,0.0', 'client_2': '1,0.0,1.0'}
-Key: weighted , Aggregation result: 0
-Handling aggregation...
-{'client_0': '0,1.0,0.0', 'client_1': '0,1.0,0.0', 'client_2': '1,0.0,1.0'}
-Key: average_probabilities , Aggregation result: 0
-Handling aggregation...
-{'client_0': '0,1.0,0.0', 'client_1': '0,1.0,0.0', 'client_2': '1,0.0,1.0'}
-Key: bayesian , Aggregation result: 1
-classification@client_0: 0,1.0,0.0
-classification@client_1: 0,1.0,0.0
-classification@client_2: 1,0.0,1.0
-All Received -> Start aggregation
-Handling aggregation...
-{'client_0': '0,1.0,0.0', 'client_1': '0,1.0,0.0', 'client_2': '1,0.0,1.0'}
-Key: most_common , Aggregation result: 0
-Handling aggregation...
-{'client_0': '0,1.0,0.0', 'client_1': '0,1.0,0.0', 'client_2': '1,0.0,1.0'}
-Key: weighted , Aggregation result: 0
-Handling aggregation...
-{'client_0': '0,1.0,0.0', 'client_1': '0,1.0,0.0', 'client_2': '1,0.0,1.0'}
-Key: average_probabilities , Aggregation result: 0
-Handling aggregation...
-{'client_0': '0,1.0,0.0', 'client_1': '0,1.0,0.0', 'client_2': '1,0.0,1.0'}
-Key: bayesian , Aggregation result: 1
-classification@client_2: 1,0.0,1.0
-user_response@server: 0
-classification@client_0: 0,1.0,0.0
-user_response@server: 0
-classification@client_1: 0,1.0,0.0
-All Received -> Start aggregation
-Handling aggregation...
-{'client_0': '0,1.0,0.0', 'client_1': '0,1.0,0.0', 'client_2': '1,0.0,1.0'}
-Key: most_common , Aggregation result: 0
-Handling aggregation...
-{'client_0': '0,1.0,0.0', 'client_1': '0,1.0,0.0', 'client_2': '1,0.0,1.0'}
-Key: weighted , Aggregation result: 0
-Handling aggregation...
-{'client_0': '0,1.0,0.0', 'client_1': '0,1.0,0.0', 'client_2': '1,0.0,1.0'}
-Key: average_probabilities , Aggregation result: 0
-Handling aggregation...
-{'client_0': '0,1.0,0.0', 'client_1': '0,1.0,0.0', 'client_2': '1,0.0,1.0'}
-Key: bayesian , Aggregation result: 1
-classification@client_0: 0,1.0,0.0
-classification@client_1: 0,1.0,0.0
-classification@client_2: 1,0.0,1.0
-All Received -> Start aggregation
-Handling aggregation...
-{'client_0': '0,1.0,0.0', 'client_1': '0,1.0,0.0', 'client_2': '1,0.0,1.0'}
-Key: most_common , Aggregation result: 0
-Handling aggregation...
-{'client_0': '0,1.0,0.0', 'client_1': '0,1.0,0.0', 'client_2': '1,0.0,1.0'}
-Key: weighted , Aggregation result: 0
-Handling aggregation...
-{'client_0': '0,1.0,0.0', 'client_1': '0,1.0,0.0', 'client_2': '1,0.0,1.0'}
-Key: average_probabilities , Aggregation result: 0
-Handling aggregation...
-{'client_0': '0,1.0,0.0', 'client_1': '0,1.0,0.0', 'client_2': '1,0.0,1.0'}
-Key: bayesian , Aggregation result: 1
-classification@client_2: 1,0.0,1.0
-user_response@server: 0
-user_response@server: 0
-user_response@server: 0
-user_response@server: 0
-user_response@server: 0
-user_response@server: 0
-user_response@server: 0
-user_response@server: 0
-user_response@server: 0
-user_response@server: 0
-input@user: Hi. Happy New Year. I dont mean to intrude but can you pls let me know how much tuition you paid last semester and how much this semester is. Thanks
-client_task@server: Hi. Happy New Year. I dont mean to intrude but can you pls let me know how much tuition you paid last semester and how much this semester is. Thanks
-client_task@server: Hi. Happy New Year. I dont mean to intrude but can you pls let me know how much tuition you paid last semester and how much this semester is. Thanks
-input@user: Hi. Happy New Year. I dont mean to intrude but can you pls let me know how much tuition you paid last semester and how much this semester is. Thanks
-client_task@server: Hi. Happy New Year. I dont mean to intrude but can you pls let me know how much tuition you paid last semester and how much this semester is. Thanks
-classification@client_0: 0,1.0,0.0
-classification@client_1: 0,1.0,0.0
-All Received -> Start aggregation
-Handling aggregation...
-{'client_0': '0,1.0,0.0', 'client_1': '0,1.0,0.0', 'client_2': '1,0.0,1.0'}
-Key: most_common , Aggregation result: 0
-Handling aggregation...
-{'client_0': '0,1.0,0.0', 'client_1': '0,1.0,0.0', 'client_2': '1,0.0,1.0'}
-Key: weighted , Aggregation result: 0
-Handling aggregation...
-{'client_0': '0,1.0,0.0', 'client_1': '0,1.0,0.0', 'client_2': '1,0.0,1.0'}
-Key: average_probabilities , Aggregation result: 0
-Handling aggregation...
-{'client_0': '0,1.0,0.0', 'client_1': '0,1.0,0.0', 'client_2': '1,0.0,1.0'}
-Key: bayesian , Aggregation result: 1
-client_task@server: Hi. Happy New Year. I dont mean to intrude but can you pls let me know how much tuition you paid last semester and how much this semester is. Thanks
-classification@client_1: 0,1.0,0.0
-classification@client_2: 1,0.0,1.0
-classification@client_0: 0,1.0,0.0
+classification@client_1: 0,0.6666666666666666,0.3333333333333333
+classification@client_2: 0,0.6666666666666666,0.3333333333333333
+classification@client_0: 1,0.3333333333333333,0.6666666666666666
 All Received -> Start aggregation
 Handling aggregation...
