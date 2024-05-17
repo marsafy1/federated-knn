@@ -110,7 +110,8 @@ if __name__ == '__main__':
         user_can_input = True
 
         app.run(debug=True)
-
+    except:
+        print("Error")
     finally:
         redisObject.publish_message('TERMINATE','user','EMPTY')
         print("All processes have been terminated.")

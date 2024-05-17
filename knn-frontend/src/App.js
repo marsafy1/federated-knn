@@ -75,7 +75,7 @@ function App() {
         </div>
         {!noInputAtAll && <div className="content_visuals">
           <div className="server_content">
-            <Server isPoisoned={false} SpamPer={data['payload']['server']['spam']}/>
+            {!loading && <Server isPoisoned={false} SpamPer={data['payload']['server']['spam']}/>}
           </div>
           <div className="loading_content">
           {loading && (
@@ -89,11 +89,11 @@ function App() {
           )}
           </div>
           <div className='nodes_content'>
-            <div className="nodes_container">
+            {!loading && <div className="nodes_container">
               <Node isPoisoned={data['payload']['clients'][0]['isPoisned']} SpamPer={data['payload']['clients'][0]['spam']}/>
               <Node isPoisoned={data['payload']['clients'][1]['isPoisned']} SpamPer={data['payload']['clients'][1]['spam']}/>
               <Node isPoisoned={data['payload']['clients'][2]['isPoisned']} SpamPer={data['payload']['clients'][2]['spam']}/>
-            </div>
+            </div>}
           </div>
         </div>}
         {noInputAtAll && <div className='noInput'>
