@@ -22,6 +22,7 @@ function App() {
 
   const [inputText, setInputText] = useState("");
   const [loading, setLoading] = useState(false);
+  const [aggLoading, setAggLoading] = useState(false);
   const [noInputAtAll, setNoInputAtAll] = useState(true);
   const [aggTech, setAggTech] = React.useState(aggTechs[0]);
   const [data, setData] = useState({
@@ -61,6 +62,22 @@ function App() {
         setLoading(false);
     }
 };
+  const setAggTechRequest = async (tech) => {
+    setAggLoading(true);
+    setAggTech(tech);
+    try {
+        const response = await axios.get(`http://127.0.0.1:5000/api/v1/setAggTech?aggTech=${tech}`, {
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        });
+        setAggTech(response.data);
+    } catch (error) {
+        console.log(error);
+    } finally {
+      setAggLoading(false);
+    }
+  };
   return (
     <div className="App">
       <div className="content">
@@ -81,7 +98,7 @@ function App() {
                     label={`${tech}`}
                     color="primary"
                     variant={aggTech === tech ? 'contained' : 'outlined'}
-                    onClick={() => setAggTech(tech)}
+                    onClick={() => setAggTechRequest(tech)}
                   />
                 ))}
               </Stack>

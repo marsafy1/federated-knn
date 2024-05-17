@@ -34,7 +34,7 @@ def start_process(script, args=[], identifier=""):
 def handle_set_agg_tech():
     aggTech = request.args.get('aggTech', None)
     # TODO: @omar_mamdouh. do ur think here
-
+    print("Updating Agg Tech-> " + aggTech)
     return aggTech
 
 @app.route('/api/v1/randomInput', methods=['GET'])
