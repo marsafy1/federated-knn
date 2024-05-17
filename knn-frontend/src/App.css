@@ -23,6 +23,23 @@
   height: 90%;
 }
 
+.node_and_name{
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--primary);
+}
+
+.node_and_name h3{
+  margin-top: 5px;
+}
+
+.node_and_name h4{
+  margin-top: 15px;
+}
+
 .server_container{
   width: 100%;
   display: flex;

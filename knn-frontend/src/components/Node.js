@@ -31,6 +31,9 @@ export default function Node({ isPoisoned, SpamPer }) {
                     </div>
                 </div>
             </div>
+            <div className='node_and_name'>
+                <h4>Client</h4>
+            </div>
         </div>
     );
 }
