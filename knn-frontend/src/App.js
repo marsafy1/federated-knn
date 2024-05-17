@@ -15,6 +15,13 @@ import ImportExportIcon from '@mui/icons-material/ImportExport';
 import Button from '@mui/material/Button';
 import LoadingButton from '@mui/lab/LoadingButton';
 import Waiting from './assets/waiting.png'
+import FormControl from '@mui/material/FormControl';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import Select from '@mui/material/Select';
+import Box from '@mui/material/Box';
+import Chip from '@mui/material/Chip';
+import Stack from '@mui/material/Stack';
 
 function App() {
   const [inputText, setInputText] = useState("");
@@ -40,6 +47,14 @@ function App() {
     'status': 'success'
 })
 
+  const aggTechs = ['Average', 'Medium', 'Sum', 'Random'];
+  const [aggTech, setAggTech] = React.useState(aggTechs[0]);
+
+  const handleChange = (event) => {
+    console.log(event);
+    // alert(event.target.value)
+    setAggTech(event.target.value);
+  };
 
   const submitText=()=>{
     // alert("hi "+inputText);
@@ -67,10 +82,45 @@ function App() {
     <div className="App">
       {/* <Navbar/> */}
       <div className="content">
-        <div className="content_input">
+        <div className='content_input_container'>
           {/* <form> */}
-            <SearchField submitText={submitText} inputText={inputText} setInputText={setInputText}/>
-            <LoadingButton loading={loading} variant="contained" sx={{ marginLeft:'10px', background:'var(--primary)', fontWeight:'bolder', color:'var(--primary-bg)', height:'50px' }} onClick={submitText}>{loading? 'Classify':'Classify'}</LoadingButton>
+          {/* <Box sx={{ minWidth: 120, color:'red'}}>
+              <FormControl fullWidth sx={{height:100, color:'red'}}>
+                <InputLabel id="demo-simple-select-label">Age</InputLabel>
+                <Select
+                  labelId="demo-simple-select-label"
+                  id="demo-simple-select"
+                  value={aggTech}
+                  label="Age"
+                  onChange={handleChange}
+                  sx={{height: 50, color:'red'}}
+                >
+                  <MenuItem value={10}>Ten</MenuItem>
+                  <MenuItem value={20}>Twenty</MenuItem>
+                  <MenuItem value={30}>Thirty</MenuItem>
+                </Select>
+              </FormControl>
+            </Box> */}
+            <div className="content_input">
+              <SearchField submitText={submitText} inputText={inputText} setInputText={setInputText}/>
+              <LoadingButton loading={loading} variant="contained" sx={{ marginLeft:'10px', background:'var(--primary)', fontWeight:'bolder', color:'var(--primary-bg)', height:'50px' }} onClick={submitText}>{loading? 'Classify':'Classify'}</LoadingButton>
+            </div>
+            <div className='options_row'>
+              <Stack direction="row" spacing={1}>
+              {aggTechs.map((tech) => (
+                  <Chip
+                    key={tech}
+                    sx={{ fontWeight: 'bold' }}
+                    label={`${tech} Filled`}
+                    color="primary"
+                    variant={aggTech === tech ? 'contained' : 'outlined'}
+                    onClick={() => setAggTech(tech)}
+                  />
+                ))}
+              </Stack>
+            </div>
+
+
           {/* </form> */}
         </div>
         {!noInputAtAll && <div className="content_visuals">

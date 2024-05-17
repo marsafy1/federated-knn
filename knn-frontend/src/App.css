@@ -289,3 +289,10 @@
 .primary-color{
   color: var(--primary);
 }
+
+
+.options_row{
+  display: flex;
+  height: 35px;
+  margin-top: 10px;
+}
