@@ -30,7 +30,12 @@ def start_process(script, args=[], identifier=""):
         return subprocess.Popen(['python', script] + args, stdout=f, stderr=subprocess.STDOUT)
 
 
+@app.route('/api/v1/setAggTech', methods=['GET'])
+def handle_set_agg_tech():
+    aggTech = request.args.get('aggTech', None)
+    # TODO: @omar_mamdouh. do ur think here
 
+    return aggTech
 
 @app.route('/api/v1/randomInput', methods=['GET'])
 def handle_random_input():
