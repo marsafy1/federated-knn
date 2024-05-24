@@ -1,5 +1,7 @@
 from collections import Counter
 from MyRedis import MyRedis
+from collections import Counter
+import json
 
 CLIENTS_NUM = 3
 default_responses_ack = {}
@@ -24,62 +26,89 @@ def reset_acks():
     global responses_ack
     responses_ack = default_responses_ack.copy()
 
-from collections import Counter
 
 
-def handle_aggregation(key='most_common'):
+def handle_aggregation(key='most_common', client_responses=None):
     print("Handling aggregation...")
     print(client_responses)
     classification_result = None
+    classification_prob = None
     if key == 'most_common':
-        classification_result = most_common_aggregation()
+        classification_result, classification_prob = most_common_aggregation(client_responses=client_responses)
     elif key == 'weighted':
-        classification_result = weighted_voting_aggregation()
+        classification_result, classification_prob = weighted_voting_aggregation()
     elif key == 'average_probabilities':
-        classification_result = average_probabilities_aggregation()
+        classification_result, classification_prob = average_probabilities_aggregation(client_responses=client_responses)
     elif key == 'bayesian':
-        classification_result = bayesian_aggregation()
+        classification_result, classification_prob = bayesian_aggregation(client_responses=client_responses)
     print(f"Key: {key} , Aggregation result: {classification_result}")
     # redisObject.publish_message('user_response', 'server', classification_result)
-    return classification_result
+    return classification_result, classification_prob
 
-def most_common_aggregation():
-    responses = [client_responses[client].split(",")[0] for client in client_responses]
-    count = Counter(responses)
-    most_common_result, most_common_count = count.most_common(1)[0]
-    return most_common_result
+def most_common_aggregation(client_responses):
+    responses = []
+    # Iterate over client responses
+    for data in client_responses.values():
+        # Safely get the 'class' value with a default if it's missing
+        class_value = data.get('class', None)
+        if class_value is not None:
+            responses.append(class_value)
+    if responses:
+        count = Counter(responses)
+        most_common_result, most_common_count = count.most_common(1)[0]
+        probability = most_common_count / len(responses) * 100
+        return most_common_result, probability
+    else:
+        print("No valid responses received.")
+        return None, 0
 
 def weighted_voting_aggregation(weights={'client1': 3, 'client2': 1, 'client3': 1}):
     vote_counts = {}
     for client, data in client_responses.items():
-        predicted_class = data.split(',')[0]
+        predicted_class = data['class']
         vote_counts[predicted_class] = vote_counts.get(predicted_class, 0) + weights.get(client, 1)
     return max(vote_counts, key=vote_counts.get)
 
-def average_probabilities_aggregation():
+def average_probabilities_aggregation(client_responses):
     total_prob_0, total_prob_1 = 0, 0
     num_clients = len(client_responses)
+    # Check for empty input to avoid division by zero
+    if num_clients == 0:
+        return None, 0
     for data in client_responses.values():
-        _, prob_0, prob_1 = data.split(',')
+        # Safely get the 'spam' value with a default if it's missing
+        prob_0 = data.get('spam', None)  # Default to 0 if 'spam' key is missing
+        if prob_0 is None:
+            continue
+        prob_1 = 1 - prob_0
         total_prob_0 += float(prob_0)
         total_prob_1 += float(prob_1)
     average_0 = total_prob_0 / num_clients
     average_1 = total_prob_1 / num_clients
-    return '0' if average_0 > average_1 else '1'
+    return ('0' if average_0 > average_1 else '1', max(average_0, average_1))
 
-def bayesian_aggregation(prior_prob_0=0.5, prior_prob_1=0.5):
+def bayesian_aggregation(prior_prob_0=0.5, prior_prob_1=0.5, client_responses=None):
+    if client_responses is None:
+        return None, 0
     post_prob_0, post_prob_1 = prior_prob_0, prior_prob_1
     for data in client_responses.values():
-        _, prob_0, prob_1 = data.split(',')
+        # Safely get the 'spam' value with a default if it's missing
+        prob_0 = data.get('spam', None)  # Default to a neutral value if 'spam' key is missing
+        if prob_0 is None:
+            continue
+        prob_1 = 1 - prob_0
         post_prob_0 *= float(prob_0)
         post_prob_1 *= float(prob_1)
+
     normalization_factor = post_prob_0 + post_prob_1 if post_prob_0 + post_prob_1 != 0 else 1
     post_prob_0 /= normalization_factor
     post_prob_1 /= normalization_factor
-    return '0' if post_prob_0 > post_prob_1 else '1'
+    return ('0' if post_prob_0 > post_prob_1 else '1', max(post_prob_0, post_prob_1))
+
 
 
 if __name__ == '__main__':
+    chosen_key = 'most_common'
     print(f"Server up and running...")
     initialize_response_objects()
     can_accept_inputs = True
@@ -94,6 +123,9 @@ if __name__ == '__main__':
             message_content = message.split("#")[2]
     
             print(f'{message_type}@{sender}:', message_content)
+            if(message_type == "aggregation_key" and can_accept_inputs):
+                chosen_key = message_content
+                print(f"Chosen key: {chosen_key}")
     
             if(message_type == "input" and can_accept_inputs):
                 redisObject.publish_message('client_task', 'server', message_content)
@@ -101,17 +133,18 @@ if __name__ == '__main__':
             if(message_type == "classification"):
                 if sender in responses_ack.keys():
                     responses_ack[sender] = True
-                    client_responses[sender] = message_content
-                
+                    client_message = json.loads(message_content)
+                    client_responses[sender] = client_message
                 if all_ack():
                     can_accept_inputs = False
                     print('All Received -> Start aggregation')
                     reset_acks()
-                    classification_result = handle_aggregation(key = 'most_common')
-                    redisObject.publish_message('user_response', 'server', classification_result)
-                    handle_aggregation(key = 'weighted')
-                    handle_aggregation(key = 'average_probabilities')
-                    handle_aggregation(key = 'bayesian')
+                    classification_result, classification_prob = handle_aggregation(key = chosen_key, client_responses=client_responses)
+                    client_responses['classification'] = {'result':classification_result, "probability": round(classification_prob,2)}
+                    redisObject.publish_message('user_response', 'server', json.dumps(client_responses))
+                    # handle_aggregation(key = 'weighted')
+                    # handle_aggregation(key = 'average_probabilities')
+                    # handle_aggregation(key = 'bayesian')
                     can_accept_inputs = True
 
 

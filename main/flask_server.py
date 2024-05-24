@@ -4,6 +4,7 @@ from MyRedis import MyRedis
 
 import pandas as pd
 import random
+import json
 
 from flask import Flask, request, jsonify
 from flask_cors import CORS
@@ -33,7 +34,7 @@ def start_process(script, args=[], identifier=""):
 @app.route('/api/v1/setAggTech', methods=['GET'])
 def handle_set_agg_tech():
     aggTech = request.args.get('aggTech', None)
-    # TODO: @omar_mamdouh. do ur think here
+    redisObject.publish_message('aggregation_key', 'user', aggTech)
     print("Updating Agg Tech-> " + aggTech)
     return aggTech
 
@@ -50,22 +51,6 @@ def handle_random_input():
 def handle_classification():
     # extract the data from the request
     text = request.args.get('text', None)
-
-    # prepare the response
-    response = {
-        'payload': {
-            'server': {
-                'class': 0,
-                'spam': random.randint(1, 100)
-            },
-            'clients': [
-                {'class': 0,'spam': random.randint(1, 100), 'isPoisned': [False, True][random.randint(0, 1)]},
-                {'class': 1,'spam': random.randint(1, 100), 'isPoisned': [False, True][random.randint(0, 1)]},
-                {'class': 0,'spam': random.randint(1, 100), 'isPoisned': [False, True][random.randint(0, 1)]},
-            ]
-        },
-        'status': 'success'
-    }
     status = 200
     # handle if text is None
     if(text is None):
@@ -73,11 +58,26 @@ def handle_classification():
         status = 400 # bad request code
     else:
         # classify
-        response['payload']['server']['class'] = get_class_for_input(text)
+        classification_dict = get_class_for_input(text)
+
+        clients = []
+        for key in classification_dict.keys():
+           if key.startswith("client"):
+              clients.append(classification_dict[key])
+
+        # prepare the response
+        response = {
+            'payload': {
+                'server': {
+                    'class': classification_dict['classification']['result'],
+                    'spam': classification_dict['classification']['probability']
+                },
+                'clients': clients
+            },
+            'status': 'success'
+        }
         print("----will send----")
         print(response)
-
-        redisObject.publish_message('input', 'user', text)
 
     return jsonify(response), status
 
@@ -100,8 +100,10 @@ def get_class_for_input(user_input):
                 message_type, sender, message_content = decoded_message.split("#")
 
                 if message_type == "user_response":
-                    print(f"Classification for the input was {message_content}")
-                    return message_content
+                    # Extract the classification result from the message
+                    classification_dict = json.loads(message_content)
+                    print(f"Classification for the input was {classification_dict}")
+                    return classification_dict
     return None
 
 if __name__ == '__main__':

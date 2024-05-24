@@ -3,6 +3,7 @@ import pandas as pd
 import numpy as np
 import sys
 import gdown
+import json
 from MyRedis import MyRedis
 from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
@@ -44,8 +45,10 @@ def get_dataset_from_drive():
 def get_and_process_data():
     global local_data
     local_data = split_dataset()
-    # print(local_data)
-    local_data['Spam']=local_data['Category'].apply(lambda x:1 if x=='spam' else 0)
+    local_data['Spam'] = local_data['Category'].apply(lambda x: 1 if x == 'spam' else 0)
+    # Replace NaN values with empty strings in the 'Message' column
+    local_data['Message'] = local_data['Message'].fillna("")
+
 
 def split_dataset():
     data = pd.read_csv(file_path)
@@ -61,12 +64,16 @@ def split_dataset():
 
 def train_model():
     global clf, X_train, X_test, y_train, y_test
-    X_train,X_test,y_train,y_test=train_test_split(local_data.Message,local_data.Spam,test_size=0.20)
-    clf=Pipeline([
-        ('vectorizer',CountVectorizer()),
-        ('nb',KNeighborsClassifier(3))
-    ])
-    clf.fit(X_train,y_train)
+    try:
+        X_train, X_test, y_train, y_test = train_test_split(local_data['Message'], local_data['Spam'], test_size=0.20)
+        clf = Pipeline([
+            ('vectorizer', CountVectorizer()),
+            ('nb', KNeighborsClassifier(3))
+        ])
+        clf.fit(X_train, y_train)
+    except Exception as e:
+        print(f"Error training model: {str(e)}")
+
 
 def test_model():
     y_pred = clf.predict(X_test)
@@ -94,7 +101,10 @@ def handle_input(input):
     if(poisoned):
         predicted_class = 1 - predicted_class
         prediction_probs = [prediction_probs[1], prediction_probs[0]]
-    redisObject.publish_message('classification', f'client_{CLIENT_ID}', f'{predicted_class},{prediction_probs[0]},{prediction_probs[1]}')
+    prediction_probs = [round(prob *100,2) for prob in prediction_probs]
+    message_to_be_sent = {'class': int(predicted_class), 'spam': prediction_probs[0], 'isPoisoned': poisoned}
+    print(message_to_be_sent)
+    redisObject.publish_message('classification', f'client_{CLIENT_ID}', json.dumps(message_to_be_sent))
     return predicted_class
 
 if __name__ == '__main__':
