@@ -16,7 +16,7 @@ import Chip from '@mui/material/Chip';
 import Stack from '@mui/material/Stack';
 
 function App() {
-  const aggTechs = ['Average', 'Medium', 'Sum', 'Random'];
+  const aggTechs = ['most_common', 'average_probabilities', 'bayesian'];
   const loadingIconsCount = 8;
   const loadingIcons = Array.from({ length: loadingIconsCount }, (_, index) => index + 1); // Create an array [1, 2, 3, 4, 5]
 
@@ -32,9 +32,9 @@ function App() {
             'spam': 50
         },
         'clients': [
-            {'class': 0,'spam': 50, 'isPoisned':false},
-            {'class': 1,'spam': 50, 'isPoisned':false},
-            {'class': 0,'spam': 50, 'isPoisned':false},
+            {'class': 0,'spam': 50, 'isPoisoned':false},
+            {'class': 1,'spam': 50, 'isPoisoned':false},
+            {'class': 0,'spam': 50, 'isPoisoned':false},
         ]
     },
     'status': 'success'
@@ -121,9 +121,9 @@ function App() {
           </div>
           <div className='nodes_content'>
             {!loading && <div className="nodes_container">
-              <Node isPoisoned={data['payload']['clients'][0]['isPoisned']} SpamPer={data['payload']['clients'][0]['spam']}/>
-              <Node isPoisoned={data['payload']['clients'][1]['isPoisned']} SpamPer={data['payload']['clients'][1]['spam']}/>
-              <Node isPoisoned={data['payload']['clients'][2]['isPoisned']} SpamPer={data['payload']['clients'][2]['spam']}/>
+              <Node isPoisoned={data['payload']['clients'][0]['isPoisoned']} SpamPer={data['payload']['clients'][0]['spam']}/>
+              <Node isPoisoned={data['payload']['clients'][1]['isPoisoned']} SpamPer={data['payload']['clients'][1]['spam']}/>
+              <Node isPoisoned={data['payload']['clients'][2]['isPoisoned']} SpamPer={data['payload']['clients'][2]['spam']}/>
             </div>}
           </div>
         </div>}
