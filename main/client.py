@@ -30,7 +30,7 @@ poisoned = str2bool(sys.argv[2]) if len(sys.argv) > 2 else False  # Default to F
 
 
 file_url = 'https://drive.google.com/uc?id=1H1hmjryGXbrXgGOLPRy7iKhBTIg2hEXt'
-file_path = '../datasets/new_spam.csv'
+file_path = '../datasets/augmented_spam.csv'
 
 X_train,X_test,y_train,y_test = None, None, None, None
 local_data = None
@@ -109,6 +109,7 @@ def handle_input(input):
 
 if __name__ == '__main__':
     print(f"Client {CLIENT_ID} up and running...")
+    message_sent = False
     init_model()
     for message in redisObject.get_pubsub().listen():
         message_type = message['type']
@@ -118,11 +119,14 @@ if __name__ == '__main__':
             sender = message.split("#")[1]
             message_content = message.split("#")[2]
     
-            if(message_type == 'client_task'):
+            if(message_type == 'client_task') and not message_sent:
                 print(f"I'm @client_{CLIENT_ID} - will classify => " + message_content)
                 classification = handle_input(message_content)
+                message_sent = True
                 print(f"I'm @client_{CLIENT_ID} - classified " + message_content + " as => " + str(classification))
-    
+
+            if(message_type =="user_response"):
+                message_sent = False
     
             if(message_type == "TERMINATE"):
                 break
