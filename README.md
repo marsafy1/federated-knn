@@ -21,6 +21,7 @@ This repository contains a federated k-Nearest Neighbors (k-NN) learning applica
 - [Usage](#usage)
 - [Project Structure](#project-structure)
 - [Technologies Used](#technologies-used)
+- [Future Work](#future-work)
 - [Contributing](#contributing)
 - [Dataset](#dataset)
 - [Setup](#setup)
@@ -124,7 +125,12 @@ federated-knn-learning/
 - **Redis**: Used for message handling between clients and servers.
 - **React**: Used for the frontend.
 
-
+## Future Work
+- [ ] Dynamic number of clients from the frontend
+- [ ] Dynamic number of poisoned clients from the frontend
+- [ ] Upload any dataset to be used in the model from the frontend
+- [ ] Adjust the k in the kNN from the frontend dynamically
+      
 ## Contributing
 
 Contributions are welcome! Please follow these steps to contribute:
