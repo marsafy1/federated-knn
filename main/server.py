@@ -48,15 +48,18 @@ def handle_aggregation(key='most_common', client_responses=None):
 def most_common_aggregation(client_responses):
     responses = []
     # Iterate over client responses
+    spam_count = 0
     for data in client_responses.values():
-        # Safely get the 'class' value with a default if it's missing
         class_value = data.get('class', None)
         if class_value is not None:
+            print(f"Class value: {class_value}")
+            if class_value == 1:
+                spam_count += 1
             responses.append(class_value)
     if responses:
         count = Counter(responses)
-        most_common_result, most_common_count = count.most_common(1)[0]
-        probability = most_common_count / len(responses) * 100
+        most_common_result, _ = count.most_common(1)[0]
+        probability = (spam_count / len(responses)) * 100
         return most_common_result, probability
     else:
         print("No valid responses received.")
@@ -85,25 +88,41 @@ def average_probabilities_aggregation(client_responses):
         total_prob_1 += float(prob_1)
     average_0 = total_prob_0 / num_clients
     average_1 = total_prob_1 / num_clients
-    return ('0' if average_0 > average_1 else '1', max(average_0, average_1))
+    return ('0' if average_0 > average_1 else '1', average_1)
 
 def bayesian_aggregation(prior_prob_0=0.5, prior_prob_1=0.5, client_responses=None):
     if client_responses is None:
         return None, 0
-    post_prob_0, post_prob_1 = prior_prob_0, prior_prob_1
-    for data in client_responses.values():
-        # Safely get the 'spam' value with a default if it's missing
-        prob_0 = data.get('spam', None)  # Default to a neutral value if 'spam' key is missing
-        if prob_0 is None:
-            continue
-        prob_1 = 1 - prob_0
-        post_prob_0 *= float(prob_0)
-        post_prob_1 *= float(prob_1)
 
-    normalization_factor = post_prob_0 + post_prob_1 if post_prob_0 + post_prob_1 != 0 else 1
+    # Initialize posterior probabilities with the prior probabilities
+    post_prob_0, post_prob_1 = prior_prob_0, prior_prob_1
+
+    # Iterate over each client's response
+    for data in client_responses.values():
+        # Retrieve the 'spam' value, default to None if it's missing
+        prob_0 = data.get('spam', None)
+        if prob_0 is None:
+            continue  # Skip this iteration if 'spam' key is missing
+
+        # Calculate the complementary probability for not-spam
+        prob_1 = 100 - prob_0  # Assuming the incoming probabilities are in percentage form
+
+        # Update the posterior probabilities using the incoming probabilities
+        post_prob_0 *= (prob_0 / 100.0)
+        post_prob_1 *= (prob_1 / 100.0)
+
+    # Calculate the normalization factor to ensure probabilities sum to 1
+    normalization_factor = post_prob_0 + post_prob_1
+    if normalization_factor == 0:
+        return None, 0  # Return None if normalization is not possible due to zero division
+
+    # Normalize the probabilities
     post_prob_0 /= normalization_factor
     post_prob_1 /= normalization_factor
-    return ('0' if post_prob_0 > post_prob_1 else '1', max(post_prob_0, post_prob_1))
+
+    # Determine the most likely category based on the highest posterior probability
+    return ('0' if post_prob_0 > post_prob_1 else '1', post_prob_1)
+
 
 
 

@@ -83,28 +83,26 @@ def handle_classification():
 
 
 def get_class_for_input(user_input):
-    while(True):
-        if user_input == "e":
-            # Publish terminate message to all clients and server
-            redisObject.publish_message('TERMINATE','user','EMPTY')
-            return "Terminated"
-        else:
-            # Classify the input using Redis
-            redisObject.publish_message('input', 'user', user_input)
-        # Listening for incoming messages from Redis and handling user input
-        for message in redisObject.get_pubsub().listen():
-            print("Listening for messages...")
+    if user_input == "e":
+        # Publish terminate message to all clients and server
+        redisObject.publish_message('TERMINATE','user','EMPTY')
+        return "Terminated"
+    else:
+        # Classify the input using Redis
+        redisObject.publish_message('input', 'user', user_input)
+    # Listening for incoming messages from Redis and handling user input
+    for message in redisObject.get_pubsub().listen():
+        print("Listening for messages...")
 
-            if message['type'] == 'message':
-                decoded_message = message['data'].decode()
-                message_type, sender, message_content = decoded_message.split("#")
+        if message['type'] == 'message':
+            decoded_message = message['data'].decode()
+            message_type, sender, message_content = decoded_message.split("#")
 
-                if message_type == "user_response":
-                    # Extract the classification result from the message
-                    classification_dict = json.loads(message_content)
-                    print(f"Classification for the input was {classification_dict}")
-                    return classification_dict
-    return None
+            if message_type == "user_response":
+                # Extract the classification result from the message
+                classification_dict = json.loads(message_content)
+                print(f"Classification for the input was {classification_dict}")
+                return classification_dict
 
 if __name__ == '__main__':
     # Start the server and client scripts

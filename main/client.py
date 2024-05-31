@@ -74,7 +74,7 @@ def train_model():
         X_train, X_test, y_train, y_test = train_test_split(local_data['Message'], local_data['Spam'], test_size=0.20)
         clf = Pipeline([
             ('vectorizer', CountVectorizer()),
-            ('nb', KNeighborsClassifier(10))
+            ('nb', KNeighborsClassifier(5))
         ])
         clf.fit(X_train, y_train)
     except Exception as e:
@@ -103,23 +103,19 @@ def init_model():
 
 def handle_input(input):
     prediction_probs = clf.predict_proba([input]).tolist()[0]
-    predicted_class = clf.predict([input])[0]
+    predicted_class = 1 if prediction_probs[0] >= 0.5 else 0
+    # predicted_class = clf.predict([input])[0]
     if(poisoned):
         predicted_class = 1 - predicted_class
         prediction_probs = [prediction_probs[1], prediction_probs[0]]
     prediction_probs = [round(prob *100,2) for prob in prediction_probs]
-    message_to_be_sent = {'class': int(predicted_class), 'spam': prediction_probs[0], 'isPoisoned': poisoned}
-    print(message_to_be_sent)
-    redisObject.publish_message('classification', f'client_{CLIENT_ID}', json.dumps(message_to_be_sent))
-    prediction_probs = [round(prob *100,2) for prob in prediction_probs]
-    message_to_be_sent = {'class': int(predicted_class), 'spam': prediction_probs[0], 'isPoisoned': poisoned}
+    message_to_be_sent = {'class': predicted_class, 'spam': prediction_probs[0], 'isPoisoned': poisoned}
     print(message_to_be_sent)
     redisObject.publish_message('classification', f'client_{CLIENT_ID}', json.dumps(message_to_be_sent))
     return predicted_class
 
 if __name__ == '__main__':
     print(f"Client {CLIENT_ID} up and running...")
-    message_sent = False
     message_sent = False
     init_model()
     for message in redisObject.get_pubsub().listen():
