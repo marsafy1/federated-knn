@@ -145,9 +145,9 @@ Contributions are welcome! Please follow these steps to contribute:
 
 ## Dataset
 
-- Total Samples: X
-- Spam: X
-- Legit: X
+- Total Samples: 39537
+- Spam: 17956
+- Legit: 21581
   
 ## Setup
 
