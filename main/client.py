@@ -4,6 +4,7 @@ import numpy as np
 import sys
 import gdown
 import json
+import json
 from MyRedis import MyRedis
 from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
@@ -31,6 +32,7 @@ poisoned = str2bool(sys.argv[2]) if len(sys.argv) > 2 else False  # Default to F
 
 file_url = 'https://drive.google.com/uc?id=1H1hmjryGXbrXgGOLPRy7iKhBTIg2hEXt'
 file_path = '../datasets/augmented_spam.csv'
+file_path = '../datasets/augmented_spam.csv'
 
 X_train,X_test,y_train,y_test = None, None, None, None
 local_data = None
@@ -45,6 +47,10 @@ def get_dataset_from_drive():
 def get_and_process_data():
     global local_data
     local_data = split_dataset()
+    local_data['Spam'] = local_data['Category'].apply(lambda x: 1 if x == 'spam' else 0)
+    # Replace NaN values with empty strings in the 'Message' column
+    local_data['Message'] = local_data['Message'].fillna("")
+
     local_data['Spam'] = local_data['Category'].apply(lambda x: 1 if x == 'spam' else 0)
     # Replace NaN values with empty strings in the 'Message' column
     local_data['Message'] = local_data['Message'].fillna("")
@@ -105,10 +111,15 @@ def handle_input(input):
     message_to_be_sent = {'class': int(predicted_class), 'spam': prediction_probs[0], 'isPoisoned': poisoned}
     print(message_to_be_sent)
     redisObject.publish_message('classification', f'client_{CLIENT_ID}', json.dumps(message_to_be_sent))
+    prediction_probs = [round(prob *100,2) for prob in prediction_probs]
+    message_to_be_sent = {'class': int(predicted_class), 'spam': prediction_probs[0], 'isPoisoned': poisoned}
+    print(message_to_be_sent)
+    redisObject.publish_message('classification', f'client_{CLIENT_ID}', json.dumps(message_to_be_sent))
     return predicted_class
 
 if __name__ == '__main__':
     print(f"Client {CLIENT_ID} up and running...")
+    message_sent = False
     message_sent = False
     init_model()
     for message in redisObject.get_pubsub().listen():
