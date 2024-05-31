@@ -22,6 +22,7 @@ This repository contains a federated k-Nearest Neighbors (k-NN) learning applica
 - [Project Structure](#project-structure)
 - [Technologies Used](#technologies-used)
 - [Contributing](#contributing)
+- [Dataset](#dataset)
 - [Setup](#setup)
 - [STRIDE](#stride)
 
