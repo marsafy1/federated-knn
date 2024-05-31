@@ -22,7 +22,8 @@ This repository contains a federated k-Nearest Neighbors (k-NN) learning applica
 - [Project Structure](#project-structure)
 - [Technologies Used](#technologies-used)
 - [Contributing](#contributing)
-- [License](#license)
+- [Setup](#setup)
+- [STRIDE](#stride)
 
 ## Overview
 
@@ -133,3 +134,18 @@ Contributions are welcome! Please follow these steps to contribute:
 4. Commit your changes (`git commit -m 'Add some feature'`).
 5. Push to the branch (`git push origin feature-branch`).
 6. Open a pull request.
+
+## Dataset
+
+- Total Samples: X
+- Spam: X
+- Legit: X
+  
+## Setup
+
+- kNN: we set n here to be 5
+- Clients: 3
+- Poisoned Clients: 1
+
+## STRIDE
+TBD
