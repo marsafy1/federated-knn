@@ -149,4 +149,67 @@ Contributions are welcome! Please follow these steps to contribute:
 - Poisoned Clients: 1
 
 ## STRIDE
-TBD
+STRIDE is a threat modeling framework used to identify potential security threats in software and hardware systems. It stands for Spoofing, Tampering, Repudiation, Information Disclosure, Denial of Service, and Elevation of Privilege.
+
+### Spoofing
+**Threat:**
+- An attacker might impersonate a legitimate client or the aggregation server.
+
+**Mitigations:**
+- Use strong authentication mechanisms such as OAuth or mutual TLS to verify the identities of clients and the server.
+- Implement IP whitelisting to restrict access to known and trusted sources.
+
+### Tampering
+**Threat:**
+- An attacker could alter data being sent from the clients to the aggregation server or vice versa.
+- The poisoned server could inject malicious data into the federated learning process.
+
+**Mitigations:**
+- Use end-to-end encryption (e.g., TLS) to protect data integrity during transmission.
+- Implement digital signatures to ensure data has not been altered.
+- Validate and sanitize data received from all clients, including checking for anomalies that might indicate poisoning.
+
+### Repudiation
+**Threat:**
+- A client or the aggregation server could deny having sent or received a particular message or transaction.
+
+**Mitigations:**
+- Use logging and audit trails to keep track of all interactions and data exchanges between clients and the server.
+- Implement non-repudiation mechanisms such as digital signatures.
+
+### Information Disclosure
+**Threat:**
+- Sensitive data might be exposed during transmission between clients and the aggregation server.
+- The poisoned server might attempt to access or disclose sensitive information.
+
+**Mitigations:**
+- Use encryption for data in transit (TLS) and at rest.
+- Apply strict access controls and permissions to restrict data access.
+- Regularly audit and monitor data access patterns for unusual activities.
+
+### Denial of Service (DoS)
+**Threat:**
+- An attacker might flood the aggregation server or clients with traffic, causing a denial of service.
+- The poisoned server could launch a DoS attack to disrupt the federated learning process.
+
+**Mitigations:**
+- Implement rate limiting and throttling to prevent flooding attacks.
+- Use network-level protections such as firewalls and intrusion detection/prevention systems.
+- Employ redundancy and load balancing to handle high traffic volumes.
+
+### Elevation of Privilege
+**Threat:**
+- An attacker might exploit vulnerabilities to gain higher-level access than permitted, such as administrative control over a client or the aggregation server.
+
+**Mitigations:**
+- Follow the principle of least privilege, ensuring that users and services have the minimum level of access necessary.
+- Regularly update and patch all systems to fix known vulnerabilities.
+- Use multi-factor authentication (MFA) for sensitive operations and administrative access.
+
+### Summary
+- **Spoofing:** Implement strong authentication and IP whitelisting.
+- **Tampering:** Use encryption, digital signatures, and data validation.
+- **Repudiation:** Use logging, audit trails, and digital signatures.
+- **Information Disclosure:** Encrypt data, apply access controls, and audit access.
+- **Denial of Service:** Implement rate limiting, network protections, and redundancy.
+- **Elevation of Privilege:** Follow least privilege, update systems, and use MFA.
