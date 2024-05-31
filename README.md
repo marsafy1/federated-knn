@@ -83,7 +83,7 @@ To install and run this project, follow these steps:
 
    - Start the frontend server:
      ```sh
-     cd main && python3 flask_server.py
+     cd main && npm start
      ```
 
 ## Project Structure
