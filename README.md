@@ -6,8 +6,9 @@
 ![Pandas](https://img.shields.io/badge/pandas-150458.svg?style=for-the-badge&logo=pandas&logoColor=white)
 ![React](https://img.shields.io/badge/react-61DAFB.svg?style=for-the-badge&logo=react&logoColor=white)
 ![MUI5](https://img.shields.io/badge/mui-007FFF.svg?style=for-the-badge&logo=mui&logoColor=white)
-
-
+<div align="center">
+   <img src="https://github.com/marsafy1/federated-knn/blob/master/knn-frontend/src/assets/turtle.png" alt="Best Turtle" width="500"/>
+</div>
 
 
 <br/>
