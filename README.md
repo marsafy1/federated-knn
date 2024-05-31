@@ -151,7 +151,7 @@ Contributions are welcome! Please follow these steps to contribute:
   
 ## Setup
 
-- kNN: we set n here to be 5
+- kNN: we set k here to be 5
 - Clients: 3
 - Poisoned Clients: 1
 
