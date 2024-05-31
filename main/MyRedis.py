@@ -3,9 +3,9 @@ import redis
 class MyRedis:
     def __init__(self):
         self.redisObject = redis.Redis(
-        host='redis-10323.c274.us-east-1-3.ec2.redns.redis-cloud.com',
-        port=10323,
-        password='hN34pvKTT8nrhOe3S9annZ6R6yNzY5Ia')
+        host='redis-13106.c89.us-east-1-3.ec2.redns.redis-cloud.com',
+        port=13106,
+        password='LZZSzxD7v4V3yvAhSwG1anlDgQHTJCwG')
         self.pubsub = self.redisObject.pubsub()
         self.pubsub.subscribe('messages')
 
